@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <meta charset="utf-8">
+    <title>KG: Seller Registration</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+          padding-top: 40px;
+          padding-bottom: 40px;
+          background-color: #eee;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">KarungGuni App</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#whatwedo">What We Do</a></li>
+            <li><a href="#FAQ">FAQ</a></li>
+          </ul>
+            <form class="navbar-form pull-right">
+                <a href="login.html" class="btn">Sign in</a>
+                <a href="register.html" class="btn">Register</a>
+            </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+        <h1>Registration</h1>
+        <p class="lead">You are registering as a <strong>seller</strong></p>
+      <div class="row">
+        <div class="col-md-6">
+            <form role="form">
+                <div class="form-group">
+                  <label for="fullname" class="col-md-3" align="right">
+                    Full Name:
+                  </label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="fullname" placeholder="Enter Full Name">
+                    <p></p>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="emailaddress" class="col-md-3" align="right">
+                    Email:
+                  </label>
+                  <div class="col-md-8">
+                    <input type="email" class="form-control" id="emailaddress" placeholder="Enter email address">
+                    <p class="help-block">
+                      Example: yourname@domain.com
+                    </p>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="password" class="col-md-3" align="right">
+                    Password:
+                  </label>
+                  <div class="col-md-8">
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                    <p class="help-block">
+                      Min: 6 characters (Alphanumeric only)
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="col-md-3">
+                  </div>
+                  <div class="col-md-8">
+                    <input type="password" class="form-control" id="repassword" placeholder="Re-enter Password">
+                   <p></p>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="address" class="col-md-3" align="right">
+                    Address:
+                  </label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="block" placeholder="Block No.">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="col-md-3">
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="unit" placeholder="Unit No.">
+                  </div>
+                </div>                
+                
+                <div class="form-group">
+                  <div class="col-md-3">
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="roadName" placeholder="Road Name">
+                  </div>
+                </div>  
+                
+                <div class="form-group">
+                  <div class="col-md-3">
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="postalCode" placeholder="Postal Code">
+                   <p></p>
+                  </div>
+                </div>  
+                
+                <div class="form-group">
+                  <label for="contact" class="col-md-3" align="right">
+                    Contact:
+                  </label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="contact" placeholder="Enter Contact No.">
+                  </div>
+                </div>
+                
+                
+                <br><br>
+                <div class="form-group">
+                  <label for="sex" class="col-md-3" align="right">
+                    <br>
+                    Gender:
+                  </label>
+                  <div class="col-md-8">
+                    <label class="radio" class="col-md-4">
+                      <input type="radio" name="sex" id="sex" value="male" checked>
+                      Male
+                    </label>
+                    <label class="radio" class="col-md-4">
+                      <input type="radio" name="sex" id="sex" value="female">
+                      Female
+                    </label>
+                  </div>
+                </div>
+
+                <!-- to upload profile pic
+                <div class="form-group">
+                  <label for="uploadimage" class="col-md-3" align="right">
+                    Upload Image:
+                  </label>
+                  <div class="col-md-8">
+                    <input type="file" name="uploadimage" id="uploadimage">
+                    <p class="help-block">
+                      Allowed formats: jpeg, jpg, gif, png
+                    </p>
+                  </div>
+
+
+                </div>
+                -->
+                
+                <div class="checkbox">
+                  <div class="col-md-3">
+                  </div>
+                  <div class="col-md-8">
+                    <label>
+                      <input type="checkbox">Terms and Conditions</label>
+                  </div>
+                </div>
+                <div class="col-md-10">
+                    <br>
+                </div>
+        <div class="row">
+                  <div class="col-md-3">
+                  </div>
+                  <div class="col-md-6">
+                    <button type="submit" class="btn btn-info">
+                      Register
+                    </button>
+                  </div>
+        </div>
+            
+        </div>
+        <div class="col-md-6">
+         schedule     
+        </div>
+        </form>
+      </div>
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+  </body>
+</html>

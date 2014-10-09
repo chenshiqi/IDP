@@ -9,12 +9,15 @@
     <meta charset="utf-8">
     <title>Karung Guni App</title>
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
     <style>
       body {
-          min-height: 2000px;
-          padding-top: 70px;
-      }     
+         height: 2000px;
+         
+      }
+      #topContainer, #aboutus, #whatwedo, #FAQ{
+          padding-top: 30px;
+      }
     </style>
   </head>
 
@@ -30,10 +33,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">KarungGuni App</a>
+          <a class="navbar-brand" href="#topContainer">KarungGuni App</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+            
             <li><a href="#aboutus">About Us</a></li>
             <li><a href="#whatwedo">What We Do</a></li>
             <li><a href="#FAQ">FAQ</a></li>
@@ -45,53 +49,60 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-
+   
     <div class="container">
+        
+    <div class="contentContainer" id="topContainer">
         <!-- START THE FEATURETTES -->
-      <hr class="featurette-divider">
+      <hr class="featurette-divider" >
       <div class="row featurette">
         <div class="col-md-16">
           <h2 class="featurette-heading" align="center">Karung Guni Application</h2>
           <p class="lead" align="center">Start buying and selling recyclable items now!</p>
           <h3>In 3 simple steps:</h3>
         </div>    
-        <img class="featurette-image img-responsive" src="/img/homepage.JPG">
+        <img class="featurette-image img-responsive" src="./img/homepage.JPG">
       </div>
-
-      <hr class="featurette-divider">
-      <a name="aboutus"></a>
+    </div>
+    
+    <div class="contentContainer" id="aboutus">
+      <hr class="featurette-divider"> 
       <div class="row featurette">
         <div class="col-md-8">
           <h2 class="featurette-heading">About Us. <span class="text-muted">It'll blow your mind.</span></h2>
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
         <div class="col-md-4">
-          <img class="featurette-image img-responsive" src="/img/aboutus.JPG" height="350" width="350">
+          <img class="featurette-image img-responsive" src="./img/aboutus.jpg" height="350" width="350">
         </div>
       </div>
-
+    </div>
+      
+    <div class="contentContainer" id="whatwedo">
       <hr class="featurette-divider">
-      <a name="whatwedo"></a>
+      
       <div class="row featurette">
         <div class="col-md-4">
-          <img class="featurette-image img-responsive" src="/img/whatwedo.JPG" height="350" width="350">
+          <img class="featurette-image img-responsive" src="./img/whatwedo.jpg" height="350" width="350">
         </div>
         <div class="col-md-8">
           <h2 class="featurette-heading">What We Do. <span class="text-muted">See for yourself.</span></h2>
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
       </div>
-
+    </div>
+    
+    
+    <div class="contentContainer" id="FAQ">
       <hr class="featurette-divider">
-      <a name="FAQ"></a>
       <div class="row featurette">
         <div class="col-md-11">
           <h2 class="featurette-heading">Frequently Asked Questions <span class="text-muted">Checkmate.</span></h2>
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
             <a class="btn btn-large btn-primary" href="register.html">Sign Up Today!</a>
-        </div>
-        
+        </div>        
       </div>
+    </div>
 
       <hr class="featurette-divider">
 
@@ -102,13 +113,16 @@
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
-    </div> <!-- /container -->
-
+    <!-- /container -->
+    </div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+        $(".contentContainer").css("min-height", $(window).height());
+        </script>
 
   </body>
 </html>

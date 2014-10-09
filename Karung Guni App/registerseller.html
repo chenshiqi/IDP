@@ -16,6 +16,9 @@
           padding-bottom: 40px;
           background-color: #eee;
         }
+        
+        table { table-layout: fixed; }
+        td { width: 33%; }
     </style>
   </head>
 
@@ -31,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">KarungGuni App</a>
+          <a class="navbar-brand" href="index.html">KarungGuni App</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -148,7 +151,7 @@
                   </label>
                   <div class="col-md-8">
                     <label class="radio" class="col-md-4">
-                      <input type="radio" name="sex" id="sex" value="male" checked>
+                      <input type="radio" name="sex" id="sex" value="male">
                       Male
                     </label>
                     <label class="radio" class="col-md-4">
@@ -185,19 +188,76 @@
                 <div class="col-md-10">
                     <br>
                 </div>
-        <div class="row">
-                  <div class="col-md-3">
-                  </div>
-                  <div class="col-md-6">
-                    <button type="submit" class="btn btn-info">
-                      Register
-                    </button>
-                  </div>
-        </div>
+            <div class="row">
+                      <div class="col-md-3">
+                      </div>
+                      <div class="col-md-6">
+                        <button type="submit" class="btn btn-info">
+                          Register
+                        </button>
+                      </div>
+            </div>
             
         </div>
+            
         <div class="col-md-6">
-         schedule     
+            <label for="schedule"> Pick your schedule: </label> 
+            <table class="table table-bordered">
+                <tr>
+                    <td>Time/Date</td>
+                    <td>mon</td>
+                    <td>tue</td>
+                    <td>wed</td>
+                    <td>thu</td>
+                    <td>fri</td>
+                    <td>sat</td>
+                    <td>sun</td>
+                </tr>
+                
+                <tr>
+                    <td>9am - 12nn</td>
+                    <td><input type="checkbox" name="mon" id="9to12"></td>
+                    <td><input type="checkbox" name="tue" id="9to12"></td>
+                    <td><input type="checkbox" name="wed" id="9to12"></td>
+                    <td><input type="checkbox" name="thu" id="9to12"></td>
+                    <td><input type="checkbox" name="fri" id="9to12"></td>
+                    <td><input type="checkbox" name="sat" id="9to12"></td>
+                    <td><input type="checkbox" name="sun" id="9to12"></td>
+                </tr>
+                
+                <tr>
+                    <td>12nn - 3pm</td>
+                    <td><input type="checkbox" name="mon" id="12to3"></td>
+                    <td><input type="checkbox" name="tue" id="12to3"></td>
+                    <td><input type="checkbox" name="wed" id="12to3"></td>
+                    <td><input type="checkbox" name="thu" id="12to3"></td>
+                    <td><input type="checkbox" name="fri" id="12to3"></td>
+                    <td><input type="checkbox" name="sat" id="12to3"></td>
+                    <td><input type="checkbox" name="sun" id="12to3"></td>
+                </tr>
+                
+                <tr>
+                    <td>3pm - 6pm</td>
+                    <td><input type="checkbox" name="mon" id="3to6"></td>
+                    <td><input type="checkbox" name="tue" id="3to6"></td>
+                    <td><input type="checkbox" name="wed" id="3to6"></td>
+                    <td><input type="checkbox" name="thu" id="3to6"></td>
+                    <td><input type="checkbox" name="fri" id="3to6"></td>
+                    <td><input type="checkbox" name="sat" id="3to6"></td>
+                    <td><input type="checkbox" name="sun" id="3to6"></td>
+                </tr>
+                
+                <tr>
+                    <td>6pm - 12pm</td>
+                    <td><input type="checkbox" name="mon" id="6to9"></td>
+                    <td><input type="checkbox" name="tue" id="6to9"></td>
+                    <td><input type="checkbox" name="wed" id="6to9"></td>
+                    <td><input type="checkbox" name="thu" id="6to9"></td>
+                    <td><input type="checkbox" name="fri" id="6to9"></td>
+                    <td><input type="checkbox" name="sat" id="6to9"></td>
+                    <td><input type="checkbox" name="sun" id="6to9"></td>
+                </tr>
+            </table>     
         </div>
         </form>
       </div>

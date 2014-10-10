@@ -1,35 +1,35 @@
 [
   {
-    "Email":"unclekiap@hotmail.com",
-    "Name":" Ong Lye Tat",
-    "Mobile Number": 91558232,
-    "Address":" Blk 324 Tampines Central #07-285",
-    "Postal Code": 960324,
-    "Feedback Positive":100,
-    "Feedback Neutral":2,
-    "Feedback Negative":1,
-    "Profile Image":"./img/Profile Pic.png"
+    "email":"unclekiap@hotmail.com",
+    "name":" Ong Lye Tat",
+    "mobileNumber": 91558232,
+    "address":" Blk 324 Tampines Central #07-285",
+    "postalCode": 960324,
+    "feedbackPositive":100,
+    "feedbackNeutral":2,
+    "feedbackNegative":1,
+    "profileImage":"./img/Profile Pic.png"
   },
   {
-    "Email":"karunguniMAN@yahoo.com",
-    "Name":"Ong Teng Cheong",
-    "Mobile Number": 987656543,
-    "Address":" blk 234 Tanglin Road #02-256",
-    "Postal Code":792234,
-    "Feedback Positive":99,
-    "Feedback Neutral":2,
-    "Feedback Negative":3,
-    "Profile Image":"./img/Profile Pic.png"
+    "email":"karunguniMAN@yahoo.com",
+    "name":"Ong Teng Cheong",
+    "mobileNumber": 987656543,
+    "address":" blk 234 Tanglin Road #02-256",
+    "postalCode":792234,
+    "feedbackPositive":99,
+    "feedbackNeutral":2,
+    "feedbackNegative":3,
+    "profileImage":"./img/Profile Pic.png"
   },
   {
-    "Email":"rubbishCollector@gmail.com",
-    "Name":" Lee Hsien Chai",
-    "Mobile Number": 92843743,
-    "Address":" 15 Nassim Road",
-    "Postal Code": 999415,
-    "Feedback Positive": 0,
-    "Feedback Neutral":5,
-    "Feedback Negative":99,
-    "Profile Image":"./img/Profile Pic.png"
+    "email":"rubbishCollector@gmail.com",
+    "name":" Lee Hsien Chai",
+    "mobileNumber": 92843743,
+    "address":" 15 Nassim Road",
+    "postalCode": 999415,
+    "feedbackPositive": 0,
+    "feedbackNeutral":5,
+    "FeedbackNegative":99,
+    "profileImage":"./img/Profile Pic.png"
   }
 ]

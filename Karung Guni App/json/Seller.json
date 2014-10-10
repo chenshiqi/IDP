@@ -1,46 +1,46 @@
 [
   {
-    "Email":"MonicaCheng@hotmail.com",
-    "Name":" Monica Cheng",
-    "Mobile Number": 91558232,
-    "Address":" Blk 324 Yishun Central #07-285",
-    "Postal Code": 760324,
-    "Feedback Positive":4,
-    "Feedback Neutral":5,
-    "Feedback Negative":6,
-    "Profile Image":"./img/Profile Pic.png"
+    "email":"MonicaCheng@hotmail.com",
+    "name":" Monica Cheng",
+    "mobileNumber": 91558232,
+    "address":" Blk 324 Yishun Central #07-285",
+    "postalCode": 760324,
+    "feedbackPositive":4,
+    "feedbackNeutral":5,
+    "feedbackNegative":6,
+    "profileImage":"./img/Profile Pic.png"
   },
   {
-    "Email":"BrianMooney@NorthernIreland.com",
-    "Name":"Brian Mooney",
-    "Mobile Number":98765432,
-    "Address":" Sentosa Cove Mansion",
-    "Postal Code": 123456,
-    "Feedback Positive": 2,
-    "Feedback Neutral":0,
-    "Feedback Negative":0,
-    "Profile Image":"./img/Profile Pic.png"
+    "email":"BrianMooney@NorthernIreland.com",
+    "name":"Brian Mooney",
+    "mobileNumber":98765432,
+    "address":" Sentosa Cove Mansion",
+    "postalCode": 123456,
+    "feedbackPositive": 2,
+    "feedbackNeutral":0,
+    "feedbackNegative":0,
+    "profileImage":"./img/Profile Pic.png"
   },
   {
-    "Email":"uncleDesmond@conman.com",
-    "Name":" Desmond Chan",
-    "Mobile Number": 99823464,
-    "Address":" 6 Mounbatten Drive",
-    "Postal Code": 442312,
-    "Feedback Positive": 2,
-    "Feedback Neutral":3,
-    "Feedback Negative":6,
-    "Profile Image":"./img/Profile Pic.png"
+    "email":"uncleDesmond@conman.com",
+    "name":" Desmond Chan",
+    "mobileNumber": 99823464,
+    "address":" 6 Mounbatten Drive",
+    "postalCode": 442312,
+    "feedbackPositive": 2,
+    "feedbackNeutral":3,
+    "feedbackNegative":6,
+    "profileImage":"./img/Profile Pic.png"
   },
   {
-    "Email":"BenBarker@msn.com",
-    "Name":" Benjamin Bucket",
-    "Mobile Number": 95673243,
-    "Address":" Blk 309 Yishun Ring Road #05-232",
-    "Postal Code": 760309,
-    "Feedback Positive": 10,
-    "Feedback Neutral":3,
-    "Feedback Negative":4,
-    "Profile Image":"./img/Profile Pic.png"
+    "email":"BenBarker@msn.com",
+    "name":" Benjamin Bucket",
+    "mobileNumber": 95673243,
+    "address":" Blk 309 Yishun Ring Road #05-232",
+    "postalCode": 760309,
+    "feedbackPositive": 10,
+    "feedbackNeutral":3,
+    "feedbackNegative":4,
+    "profileImage":"./img/Profile Pic.png"
   }
  ]

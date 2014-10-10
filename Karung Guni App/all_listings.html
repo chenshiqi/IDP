@@ -11,7 +11,13 @@
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <style>
-        
+        .columns {
+         -moz-column-count: 3;
+         -moz-column-gap: 1em;
+         -webkit-column-count: 3;
+         -webkit-column-gap: 1em;
+        }
+
     </style>
   </head>
 
@@ -27,7 +33,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    
+
     <div ng-view=""></div>
         <script type="text/javascript" src="js/libs/angular.js/angular.js"></script>
         <script type="text/javascript" src="js/libs/angular.js/angular-route.js"></script>        
@@ -36,7 +42,7 @@
             var myApplication = angular.module('myApplication', ['ngRoute']);
             
             myApplication.config(function ($routeProvider){
-               $routeProvider.when('/items', {templateUrl: 'partials/items.html', controller: 'BasicController'});
+               $routeProvider.when('/items', {templateUrl: 'partials/items.html', controller: 'ItemListCtrl'});
                $routeProvider.otherwise({redirectTo:'/items'});
             });
             
@@ -61,8 +67,17 @@
                 };
             }
             
-            myApplication.controller('BasicController', BasicController);
+            
+            //myApplication.controller('BasicController', BasicController);
+            myApplication.controller('ItemListCtrl', ['$scope', '$http',
+                function ($scope, $http) {
+                    $http.get('json/Item.json').success(function(data) {
+                    $scope.items = data;
+                    });
+                }]);
     </script>
+    
+   
     </div>
   </body>
 </html>

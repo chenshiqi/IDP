@@ -1,34 +1,51 @@
 <div ng-controller="ItemListCtrl">
-    <h5>List of Items</h5>
-    Search: <input type="text" ng-model="item_src" />
-    <br/>
-    Sort by:
-    <select ng-model="orderProp">
-            <option value="name">Alphabetical</option>
-            <option value="-timestamp">Newest</option>
-            <option value="timestamp">Oldest</option>
-    </select>
-    <br/>
-    Category: 
-    <select ng-model="type">
-            <option value="">All</option>
-            <option value="electronics">Electronics</option>
-            <option value="furniture">Furniture</option>
-            <option value="paper">Paper</option>
-            <option value="other">Other</option>
-    </select>  
-    <br/>
-    <h6>Seller Availability</h6>
-    Date: <input type="text" ng-model="date" />
-    <br/>
-    Time: <input type="text" ng-model="start" /> - <input type="text" ng-model="end" />
+    
+    <table>
+        <tr><h5>List of Items</h5></tr>
+        <tr>
+            <td>Search:</td>
+            <td><input type="text" ng-model="item_src" /></td>
+        </tr>
+        <tr>
+            <td>Sort by:</td>
+            <td><select ng-model="orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="-timestamp">Newest</option>
+                <option value="timestamp">Oldest</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>Category: </td>
+            <td><select ng-model="type">
+                <option value="">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="furniture">Furniture</option>
+                <option value="paper">Paper</option>
+                <option value="other">Other</option>
+                </select></td>
+        </tr>
+        
+    </table>
+    <table>
+        <tr>
+            <h5>Seller Availability</h5>
+        </tr>
+        <tr>
+            <td>Date:</td>
+            <td><input type="text" ng-model="date" /></td>
+        </tr>
+        <tr>
+            <td>Time:</td>
+            <td><input type="text" ng-model="start" /> - <input type="text" ng-model="end" /></td>
+        </tr>
+    </table>
     <br/>
 
     
     <div class="container-fluid">
     <div class="row">
         <div ng-repeat="item in items | filter:item_src | orderBy:orderProp | filter:type" class="col-md-4">
-            <a href="#/img/Items/{{item.id}}" class="thumbnail"><img ng-src="{{item.imageURL}}"></a>
+            <div class="thumbnail"><img ng-src="{{item.imageURL}}"/>
             <br/>
             {{item.name | uppercase}}
             <br/>
@@ -37,11 +54,11 @@
             Condition: {{item.condition}} 
             <br/>
             Price: {{item.price}}
-            
-            <p>{{item.description}}</p>
-            
-            <p>{{item.sellerId}}</p>
-            
+            <br/>
+            Description: {{item.description}}
+            <br/>
+            Seller: {{item.sellerId}}
+            </div>
         </div>
     </div>
     </div>

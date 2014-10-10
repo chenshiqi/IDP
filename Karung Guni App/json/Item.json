@@ -1,31 +1,30 @@
 [
   {
-    "Name":"2.1 Logitech Speakers",
-    "Category": "Electronics",
-    "Condition": 8,
-    "Description": "Item is in great shape",
-    "Price": 34.50,
-    "Seller ID":"MonicaCheng@hotmail.com",
-    "Image Link": "./img/Items/Logitech Speakers 1.jpg",
-    "Image Link 2": "./img/Items/Logitech Speakers 2.jpg"
+    "name":"2.1 Logitech Speakers",
+    "category": "Electronics",
+    "condition": 8,
+    "description": "Item is in great shape",
+    "price": 34.50,
+    "sellerId":"MonicaCheng@hotmail.com",
+    "imageURL": "./img/Items/Logitech Speakers 1.jpg"
   },
   {
-      "Name":"Old Newspapers",
-      "Categories": "Newspapers/Cardboards",
-      "Condition": 10,
-      "Description": "Straits Times, Newpaper from the past 3 months. Weight is close to 15kg",
-      "Price": 7,
-      "Seller ID": "MonicaCheng@hotmail.com",
-      "Image Link": "./img/Items/newspaper.jpg"
+    "name":"Old Newspapers",
+    "category": "Newspapers/Cardboards",
+    "condition": 10,
+    "description": "Straits Times, Newpaper from the past 3 months. Weight is close to 15kg",
+    "price": 7,
+    "sellerId": "MonicaCheng@hotmail.com",
+    "imageURL": "./img/Items/newspaper.jpg"
   },
   { 
-      "Name:": "Spoilt VCR",
-      "Categories": "Electronics",
-      "Condition": 2,
-      "Description": "VCR is over 10 years old & is no longer usable. However, parts are still intact.",
-      "Price": 5,
-      "Seller ID": "uncleDesmond@conman.com",
-      "Image Link": "./img/Items/vcr.jpg"
+    "name": "Spoilt VCR",
+    "category": "Electronics",
+    "condition": 2,
+    "description": "VCR is over 10 years old & is no longer usable. However, parts are still intact.",
+    "price": 5,
+    "sellerId": "uncleDesmond@conman.com",
+    "imageURL": "./img/Items/vcr.jpg"
   }
 ] 
     

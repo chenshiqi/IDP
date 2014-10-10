@@ -1,0 +1,39 @@
+<div ng-controller="BasicController">
+    <h5>List of Items</h5>
+    Search: <input type="text" ng-model="item_src" />
+    <br/>
+    Sort by:
+    <select ng-model="orderProp">
+            <option value="name">Alphabetical</option>
+            <option value="-timestamp">Newest</option>
+            <option value="timestamp">Oldest</option>
+    </select>
+    <br/>
+    Category: 
+    <select ng-model="type">
+            <option value="">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="paper">Paper</option>
+            <option value="other">Other</option>
+    </select>  
+    <br/>
+    <h6>Seller Availability</h6>
+    Date: <input type="text" ng-model="date" />
+    <br/>
+    Time: <input type="text" ng-model="start" /> - <input type="text" ng-model="end" />
+    <br/>
+
+    
+    
+    <ul>
+        <li ng-repeat="item in items | filter:item_src | orderBy:orderProp | filter:type">{{item.name | uppercase}} >> {{item.timestamp}} >> {{item.type}}</li>
+    </ul>
+    <br/>
+    
+    
+    <h5>New Item</h5>
+    Item Name: <input type="text" ng-model="newItem.name"/>
+    Type: <input type="text" ng-model="newItem.type"/>
+    <button ng-click="addItem()">Add Item</button>
+</div> 

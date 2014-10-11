@@ -11,14 +11,16 @@
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <style>
-
+        #listings{
+            padding-top: 70px;
+        }
     </style>
   </head>
 
   <body>
 
     <!-- Fixed navbar -->
-    
+    <div id="includedNavBar"></div>
     
     <div class="container">
 
@@ -28,11 +30,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
 
-    <div ng-view=""></div>
+    <div ng-view="" id="listings"></div>
         <script type="text/javascript" src="js/libs/angular.js/angular.js"></script>
         <script type="text/javascript" src="js/libs/angular.js/angular-route.js"></script>        
         
         <script type="text/javascript"> 
+            //include navbar
+            //To do: Display the correct navbar for the correct type of user
+            $(function(){
+                $("#includedNavBar").load("buyerNavBar.html"); 
+            });
+            
+            
             var myApplication = angular.module('myApplication', ['ngRoute']);
             
             myApplication.config(function ($routeProvider){

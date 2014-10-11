@@ -11,9 +11,6 @@
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .thumbnail{
-
-        }
 
     </style>
   </head>
@@ -39,8 +36,8 @@
             var myApplication = angular.module('myApplication', ['ngRoute']);
             
             myApplication.config(function ($routeProvider){
-               $routeProvider.when('/items', {templateUrl: 'partials/items.html', controller: 'ItemListCtrl'});
-               $routeProvider.otherwise({redirectTo:'/items'});
+               $routeProvider.when('/all_listings', {templateUrl: 'partials/all_listings.html', controller: 'ItemListCtrl'});
+               $routeProvider.otherwise({redirectTo:'/all_listings'});
             });
             
             myApplication.factory('dataFactory', function(){

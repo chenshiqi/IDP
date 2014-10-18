@@ -1,0 +1,31 @@
+[
+  {
+    "name":"2.1 Logitech Speakers",
+    "category": "Electronics",
+    "condition": 8,
+    "description": "Item is in great shape",
+    "price": 34.50,
+    "sellerId":"MonicaCheng@hotmail.com",
+    "imageURL": "./img/Items/Logitech Speakers 1.jpg"
+  },
+  {
+    "name":"Old Newspapers",
+    "category": "Newspapers/Cardboards",
+    "condition": 10,
+    "description": "Straits Times, Newpaper from the past 3 months. Weight is close to 15kg",
+    "price": 7,
+    "sellerId": "MonicaCheng@hotmail.com",
+    "imageURL": "./img/Items/newspaper.jpg"
+  },
+  { 
+    "name": "Spoilt VCR",
+    "category": "Electronics",
+    "condition": 2,
+    "description": "VCR is over 10 years old & is no longer usable. However, parts are still intact.",
+    "price": 5,
+    "sellerId": "uncleDesmond@conman.com",
+    "imageURL": "./img/Items/vcr.jpg"
+  }
+] 
+    
+    

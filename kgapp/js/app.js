@@ -2,6 +2,7 @@ var myApplication = angular.module('myApplication', ['ngRoute']);
 
 myApplication.config(function ($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'partials/welcome.html', controller: ''});
+    $routeProvider.when('/welcome', {templateUrl: 'partials/welcome.html', controller:''});
     $routeProvider.when('/all_listings', {templateUrl: 'partials/all_listings.html', controller: 'ItemListCtrl'});
     $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'LoginCtrl'});
     $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: ''})

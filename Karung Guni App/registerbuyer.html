@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
     <meta charset="utf-8">
     <title>KG: Buyer Registration</title>
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
           padding-top: 40px;
@@ -47,7 +46,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" ng-controller="RegisterController as register">
         <h1>Registration</h1>
         <p class="lead">You are registering as a <strong>buyer</strong></p>
       <div class="row">
@@ -58,7 +57,7 @@
                     Full Name:
                   </label>
                   <div class="col-md-8">
-                    <input type="text" class="form-control" id="fullname" placeholder="Enter Full Name">
+                    <input ng-model="register.userbuyer.name" type="text" class="form-control" id="fullname" placeholder="Enter Full Name">
                     <p></p>
                   </div>
                 </div>
@@ -68,7 +67,7 @@
                     Email:
                   </label>
                   <div class="col-md-8">
-                    <input type="email" class="form-control" id="emailaddress" placeholder="Enter email address">
+                    <input ng-model="register.userbuyer.email" type="email" class="form-control" id="emailaddress" placeholder="Enter email address">
                     <p class="help-block">
                       Example: yourname@domain.com
                     </p>
@@ -80,7 +79,7 @@
                     Password:
                   </label>
                   <div class="col-md-8">
-                    <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                    <input ng-model="register.userbuyer.password" type="password" class="form-control" id="password" placeholder="Enter Password">
                     <p class="help-block">
                       Min: 6 characters (Alphanumeric only)
                     </p>
@@ -101,23 +100,7 @@
                     Address:
                   </label>
                   <div class="col-md-8">
-                    <input type="text" class="form-control" id="block" placeholder="Block No.">
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <div class="col-md-3">
-                  </div>
-                  <div class="col-md-8">
-                    <input type="text" class="form-control" id="unit" placeholder="Unit No.">
-                  </div>
-                </div>                
-                
-                <div class="form-group">
-                  <div class="col-md-3">
-                  </div>
-                  <div class="col-md-8">
-                    <input type="text" class="form-control" id="roadName" placeholder="Road Name">
+                    <input ng-model="register.userbuyer.address" type="text" class="form-control" id="roadName" placeholder="Enter Address">
                   </div>
                 </div>  
                 
@@ -125,7 +108,7 @@
                   <div class="col-md-3">
                   </div>
                   <div class="col-md-8">
-                    <input type="text" class="form-control" id="postalCode" placeholder="Postal Code">
+                    <input ng-model="register.userbuyer.postalcode" type="text" class="form-control" id="postalCode" placeholder="Enter Postal Code">
                    <p></p>
                   </div>
                 </div>  
@@ -135,10 +118,9 @@
                     Contact:
                   </label>
                   <div class="col-md-8">
-                    <input type="text" class="form-control" id="contact" placeholder="Enter Contact No.">
+                    <input ng-model="register.userbuyer.contact" type="text" class="form-control" id="contact" placeholder="Enter Contact No.">
                   </div>
                 </div>
-                
                 
                 <br><br>
                 <div class="form-group">
@@ -148,38 +130,34 @@
                   </label>
                   <div class="col-md-8">
                     <label class="radio" class="col-md-4">
-                      <input type="radio" name="sex" id="sex" value="male" checked>
+                      <input ng-model="register.userbuyer.gender" type="radio" name="sex" id="sex" value="male">
                       Male
                     </label>
                     <label class="radio" class="col-md-4">
-                      <input type="radio" name="sex" id="sex" value="female">
+                      <input ng-model="register.userbuyer.gender" type="radio" name="sex" id="sex" value="female">
                       Female
                     </label>
                   </div>
                 </div>
 
-                <!-- to upload profile pic
                 <div class="form-group">
                   <label for="uploadimage" class="col-md-3" align="right">
                     Upload Image:
                   </label>
                   <div class="col-md-8">
-                    <input type="file" name="uploadimage" id="uploadimage">
+                    <input ng-model="register.userbuyer.profilepic" type="file" name="uploadimage" id="uploadimage">
                     <p class="help-block">
                       Allowed formats: jpeg, jpg, gif, png
                     </p>
                   </div>
-
-
                 </div>
-                -->
                 
                 <div class="checkbox">
                   <div class="col-md-3">
                   </div>
                   <div class="col-md-8">
                     <label>
-                      <input type="checkbox">Terms and Conditions</label>
+                      <input ng-model="register.userbuyer.tnc" type="checkbox" value="true">Terms and Conditions</label>
                   </div>
                 </div>
                 <div class="col-md-10">
@@ -204,7 +182,11 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-
+    <script src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular.js/angular.js"></script>
+    <script type="text/javascript" src="js/libs/angular.js/angular-route.js"></script>
+    <script type="text/javascript" src="js/register.js"></script>
+      
   </body>
 </html>
+

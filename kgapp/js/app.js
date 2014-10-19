@@ -8,6 +8,9 @@ myApplication.config(function ($routeProvider) {
     $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: ''})
     $routeProvider.when('/register/seller', {templateUrl: 'partials/register_seller.html', controller: ''})
     $routeProvider.when('/register/buyer', {templateUrl: 'partials/register_buyer.html', controller: ''})
+    $routeProvider.when('/add-item', {templateUrl: 'partials/add_item.html', controller:''}) //to add controller for addItem
+    $routeProvider.when('/edit-item', {templateUrl: 'partials/edit_item.html', controller:'EditItemCtrl'})
+    $routeProvider.when('/faq', {templateUrl: 'partials/faq.html', controller:''})
 });
 
 myApplication.factory('dataFactory', function () {
@@ -40,13 +43,31 @@ myApplication.controller('ItemListCtrl', ['$scope', '$http',
         });
     }]);
 
+ myApplication.controller('MainController', function($scope, $route, $routeParams, $location) {
+     $scope.$route = $route;
+     $scope.$location = $location;
+     $scope.$routeParams = $routeParams;
+ });
+ 
 myApplication.controller('LoginCtrl', ['$scope', '$http',
     function ($scope, $http) {
         
     }]);
 
+myApplication.controller('EditItemCtrl', ['$scope', '$http', 
+    function($scope, $http) {
+        $http.get('json/Item.json').success(function (data){
+           $scope.items = data; 
+        });
+    
+}]);
+
 $(function () {
-    $("#includedUserNavBar").load("./templates/navBuyer.html");
+    $("#includedBuyerNavBar").load("./templates/navBuyer.html");
+});
+
+$(function () {
+    $("#includedSellerNavBar").load("./templates/navSeller.html");
 });
 
 $(function () {

@@ -1,0 +1,56 @@
+<style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+    row{
+        padding-top: 40px;
+    }
+    table { table-layout: fixed; }
+    td { width: 33%; }
+    #buttons{
+        padding-top: 20px;
+    }
+</style>
+
+<form role="form">
+    <div class="form-group">
+        <label for="date" class="col-md-3" align="right">
+            Date
+        </label>
+        <div class="col-md-8">
+            <input type="date" class="form-control" id="itemName" placeholder="Enter Date">
+            <p></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="time" class="col-md-3" align="right">
+            Time
+        </label>
+        <div class="col-md-8">
+            <input type="time" class="form-control" id="category" placeholder="Enter Time">
+            <p></p>
+        </div>
+    </div>  
+    <div class="form-group">
+        <label for="offerPrice" class="col-md-3" align="right">
+            Offer Price
+        </label>
+        <div class="col-md-8">
+            <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="number" min="0" step="0.01" class="form-control" id="price" placeholder="Enter price e.g 5.95">
+                <p></p>
+            </div>
+        </div>
+    </div>
+ <div class="col-md-8" align="center" id="buttons">
+    <button type="submit" class="btn btn-primary" value="submit ">
+        Send Offer
+    </button>
+    <button type="submit" class="btn btn-primary" value="cancel">
+        Cancel
+    </button>
+ </div>
+</form>

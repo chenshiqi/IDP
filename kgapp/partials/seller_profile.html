@@ -1,16 +1,66 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<style>
+    #profile{
+        padding-left: 60px;
+    }
+</style>
+
+<h1>Seller's Page </h1>
+<div class="row" ng-controller="ItemListCtrl">
+    <div class="col-md-6">
+
+                <div ng-repeat="item in items">
+                    <div class="thumbnail"><input type="checkbox" value="itemID"><img ng-src="{{item.imageURL}}"/>
+                        <br/>
+                        {{item.name| uppercase}}
+                        <br/>
+                        Category: {{item.category}} 
+                        <br/>
+                        Condition: {{item.condition}} 
+                        <br/>
+                        Price: {{item.price}}
+                        <br/>
+                        Description: {{item.description}}
+                        <br/>
+                        Seller: {{item.sellerId}}
+                    </div>
+                </div>
+       
+   
+    </div>
+    
+    <!-- SellerUserCtrl controller isn't working.-->
+    <div class="col-md-6" ng-controller="SellerUserCtrl" id="profile">
+            <table class="table table-condensed">
+                <tr>
+                    <td>Email: </td>
+                    <td>Email to appear</td>
+                </tr>
+                <tr>
+                    <td>Name: </td>
+                    <td>Name to appear</td>
+                </tr>
+                 <tr>
+                    <td>Contact: </td>
+                    <td>Contact number to appear</td>
+                </tr>
+                <tr>
+                    <td>Address: </td>
+                    <td>Address to appear</td>
+                </tr>
+                <tr>
+                    <td>Postal Code: </td>
+                    <td>Postal Code to appear</td>
+                </tr>
+                <tr>
+                    <td>Schedule: </td>
+                    <td>Schedule to appear</td>
+                </tr>
+                <tr>
+                    <td>Ratings: </td>
+                    <td>Ratings to appear</td>
+                </tr>
+            </table>
+        <button type="submit">Send Offers</button>
+        
+    </div>
+</div>

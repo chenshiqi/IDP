@@ -77,7 +77,7 @@
                 </tr>
             </table>
         <!-- TO EDIT: show buttons to correct user -->
-        <button type="submit" class="btn btn-primary" ng-show="{{seller[0].isLoggedIn}}">Edit Items</button>
+        <button type="submit" class="btn btn-primary" ng-show="{{seller[0].email === "MonicaCheng@hotmail.com"}}">Edit Items</button>
         <div ng-controller="BuyerUserCtrl as buyer">
         <button type="submit" class="btn btn-primary" ng-show="{{buyer[0].isLoggedIn}}">Send Offers</button>
         </div>

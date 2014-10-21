@@ -45,7 +45,8 @@
     <div class="container-fluid">
     <div class="row">
         <div ng-repeat="item in items | filter:item_src | orderBy:orderProp | filter:type" class="col-md-4">
-            <div class="thumbnail"><img ng-src="{{item.imageURL}}"/>
+            <div class="thumbnail">
+                <a href="#/seller/profile/monicacheng"><img ng-src="{{item.imageURL}}"/></a>
             <br/>
             {{item.name | uppercase}}
             <br/>
@@ -58,6 +59,7 @@
             Description: {{item.description}}
             <br/>
             Seller: {{item.sellerId}}
+                
             </div>
         </div>
     </div>

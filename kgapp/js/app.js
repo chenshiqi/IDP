@@ -1,7 +1,6 @@
 var myApplication = angular.module('myApplication', ['ngRoute']);
 
 myApplication.config(function ($routeProvider) {
-    $routeProvider.when('/', {templateUrl: 'partials/welcome.html', controller: ''});
     $routeProvider.when('/welcome', {templateUrl: 'partials/welcome.html', controller:''});
     $routeProvider.when('/all_listings', {templateUrl: 'partials/all_listings.html', controller: 'ItemListCtrl'});
     $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'LoginCtrl'});
@@ -9,11 +8,15 @@ myApplication.config(function ($routeProvider) {
     $routeProvider.when('/register/seller', {templateUrl: 'partials/register_seller.html', controller: ''});
     $routeProvider.when('/register/buyer', {templateUrl: 'partials/register_buyer.html', controller: ''});
     $routeProvider.when('/add-item', {templateUrl: 'partials/add_item.html', controller:''}); //to add controller for addItem
-    $routeProvider.when('/edit-item', {templateUrl: 'partials/edit_item.html', controller:'EditItemCtrl'});
+    $routeProvider.when('/edit-item', {templateUrl: 'partials/edit_item.html', controller:'EditItemCtrl'}); //route according to item ID
     $routeProvider.when('/faq', {templateUrl: 'partials/faq.html', controller:''});
     $routeProvider.when('/seller/profile/monicacheng', {templateUrl: 'partials/seller_profile.html'});
     $routeProvider.when('/seller/profile/monicacheng/send-offer', {templateUrl: 'partials/send_offer.html'});
     $routeProvider.when('/buyer/profile/onglyetat', {templateUrl: 'partials/buyer_profile.html'});
+    $routeProvider.when('/seller/monicacheng/myoffers', {templateUrl: 'partials/offer_seller.html'});
+    $routeProvider.when('/buyer/onglyetat/myoffers', {templateUrl: 'partials/offer_buyer.html'});
+    $routeProvider.when('/leave-feedback', {templateUrl: 'partials/feedback.html'})
+    $routeProvider.otherwise({redirectTo:'/welcome'});
 });
 
 myApplication.factory('dataFactory', function () {
@@ -81,6 +84,8 @@ myApplication.controller('BuyerUserCtrl', ['$scope', '$http',
     
 }]);
 
+
+//to assign logic of displaying correct nav bar based on user log in
 $(function () {
     $("#includedBuyerNavBar").load("./templates/navBuyer.html");
 });

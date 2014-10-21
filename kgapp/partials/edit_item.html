@@ -12,7 +12,7 @@
 </style>
 
 <div ng-controller="EditItemCtrl as editItem">
-    <h1>Add Item</h1>
+    <h1>Edit Item</h1>
     <div class="row">
         <div class="col-md-4">
             upload image
@@ -21,21 +21,28 @@
             <form role="form">
                 <!--TODO: Fill forms with existing data-->
                 <div class="form-group">
-                    <label for="itemstatus" class="col-md-3" align="right">
-                        Item Status
+                    <label for="status" class="col-md-3" align="right">
+                        <br>
+                        Status
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="itemName" placeholder="Status">
-                        <p></p>
+                        <label class="radio" class="col-md-4">
+                            <input type="radio" name="sex" id="status" value="Available">
+                            Available
+                        </label>
+                        <label class="radio" class="col-md-4">
+                            <input type="radio" name="sex" id="status" value="Pending">
+                            Pending
+                        </label>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="itemname" class="col-md-3" align="right">
                         Item Name
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="itemName" placeholder="{{}}">
+                        <input type="text" class="form-control" id="itemName" placeholder="{{items[0].name}}">
                         <p></p>
                     </div>
                 </div>
@@ -45,7 +52,7 @@
                         Category
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="category" placeholder="Enter Category">
+                        <input type="text" class="form-control" id="category" placeholder="{{items[0].category}}">
                         <p></p>
                     </div>
                 </div>  
@@ -54,7 +61,7 @@
                         Condition
                     </label>
                     <div class="col-md-8">
-                        <input type="number" min="0" max="10" class="form-control" id="condition" placeholder="Enter Condition">
+                        <input type="number" min="0" max="10" class="form-control" id="condition" placeholder="{{items[0].condition}}">
                         <p></p>
                     </div>
                 </div>                   
@@ -63,7 +70,7 @@
                         Details
                     </label>
                     <div class="col-md-8">
-                        <textarea class="form-control" rows="3" id="details" placeholder="Enter Details"></textarea>
+                        <textarea class="form-control" rows="3" id="details" placeholder="{{items[0].description}}"></textarea>
                         <p></p>
                     </div>
                 </div>             
@@ -75,18 +82,18 @@
                     <div class="col-md-8">
                         <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input type="number" min="0" step="0.01" class="form-control" id="price" placeholder="Enter price e.g 5.95">
+                            <input type="number" min="0" step="0.01" class="form-control" id="price" placeholder="{{items[0].price}}">
                             <p></p>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary" value="submit ">
-                        Add Item
+                        Update Item
                     </button>
                     <button type="submit" class="btn btn-primary" value="cancel">
                         Cancel
                     </button>
                 </div>
-           
+
             </form>
 
         </div>

@@ -8,7 +8,8 @@
     "feedbackPositive":4,
     "feedbackNeutral":5,
     "feedbackNegative":6,
-    "profileImage":"./img/Profile Pic.png"
+    "profileImage":"./img/Profile Pic.png",
+    "schedule" : "Mon-Fri 10am - 3pm"
   },
   {
     "email":"BrianMooney@NorthernIreland.com",
@@ -19,7 +20,8 @@
     "feedbackPositive": 2,
     "feedbackNeutral":0,
     "feedbackNegative":0,
-    "profileImage":"./img/Profile Pic.png"
+    "profileImage":"./img/Profile Pic.png",
+    "schedule" : "Mon-Fri 10am - 3pm"
   },
   {
     "email":"uncleDesmond@conman.com",
@@ -30,7 +32,8 @@
     "feedbackPositive": 2,
     "feedbackNeutral":3,
     "feedbackNegative":6,
-    "profileImage":"./img/Profile Pic.png"
+    "profileImage":"./img/Profile Pic.png",
+    "schedule" : "Mon-Fri 10am - 3pm"
   },
   {
     "email":"BenBarker@msn.com",
@@ -41,6 +44,7 @@
     "feedbackPositive": 10,
     "feedbackNeutral":3,
     "feedbackNegative":4,
-    "profileImage":"./img/Profile Pic.png"
+    "profileImage":"./img/Profile Pic.png",
+    "schedule" : "Mon-Fri 10am - 3pm"
   }
  ]

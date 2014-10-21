@@ -1,16 +1,42 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<style>
+    body{
+        padding-top: 80px;
+    }
+</style>
+
+<table class="table">
+    <tr>
+        <td>
+            <a href="#/feedback/positive"><img src="./img/Feedback/positive.png"/></a>
+        </td>
+        <td>
+            <img src="./img/Feedback/neutral.png"/>
+        </td>
+        <td>
+            <img src="./img/Feedback/negative.png"/>
+        </td>
+    </tr>
+    <form role="form">
+        <tr>
+            <td>
+                <label class="radio" class="col-md-4">
+                    <input type="radio" name="rating" id="rating" value="positive">
+                    Positive
+                </label>
+            </td>
+            <td>
+                <label class="radio" class="col-md-4">
+                    <input type="radio" name="feedback" id="rating" value="neutral">
+                    Neutral
+                </label>                
+            </td>
+            <td>
+                <label class="radio" class="col-md-4">
+                    <input type="radio" name="feedback" id="rating" value="negative">
+                    Negative
+                </label>
+            </td>
+        </tr>
+        <button type="submit" > Submit</button>
+    </form>
+</table>

@@ -57,6 +57,8 @@ myApplication.controller('ItemListCtrl', ['$scope', '$http',
  
 myApplication.controller('LoginCtrl', ['$scope', '$http',
     function ($scope, $http) {
+    console.log("hello");
+    
         
     }]);
 

@@ -2,27 +2,40 @@
     #profile{
         padding-left: 60px;
     }
- 
+    
 </style>
 
 <h1>Seller's Page </h1>
 <div class="row" ng-controller="ItemListCtrl">
     <div class="col-md-6">
-
+                <!--to do: show only monica's items-->
                 <div ng-repeat="item in items">
                     <div class="thumbnail"><input type="checkbox" value="itemID"><img ng-src="{{item.imageURL}}"/>
-                        <br/>
-                        {{item.name| uppercase}}
-                        <br/>
-                        Category: {{item.category}} 
-                        <br/>
-                        Condition: {{item.condition}} 
-                        <br/>
-                        Price: {{item.price}}
-                        <br/>
-                        Description: {{item.description}}
-                        <br/>
-                        Seller: {{item.sellerId}}
+                        <table>
+                            <tr>
+                                {{item.name| uppercase}}
+                            </tr>
+                            <tr>
+                                <td>Category: </td>
+                                <td>{{item.category}}</td>
+                            </tr>
+                            <tr>
+                                <td>Condition: </td>
+                                <td>{{item.condition}}</td>
+                            </tr>
+                            <tr>
+                                <td>Price: </td>
+                                <td>{{item.price}}</td>
+                            </tr>
+                            <tr>
+                                <td>Description: </td>
+                                <td>{{item.description}}</td>
+                            </tr>
+                            <tr>
+                                <td>Seller: </td>
+                                <td>{{item.sellerId}}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
        
@@ -77,9 +90,9 @@
                 </tr>
             </table>
         <!-- TO EDIT: show buttons to correct user -->
-        <button type="submit" class="btn btn-primary" ng-show="{{seller[0].email === "MonicaCheng@hotmail.com"}}">Edit Items</button>
+        <button type="submit" class="btn btn-primary">Edit Items</button>
         <div ng-controller="BuyerUserCtrl as buyer">
-        <button type="submit" class="btn btn-primary" ng-show="{{buyer[0].isLoggedIn}}">Send Offers</button>
+        <button type="submit" class="btn btn-primary">Send Offers</button>
         </div>
         
     </div>

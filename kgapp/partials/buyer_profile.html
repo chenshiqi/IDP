@@ -1,33 +1,41 @@
 <!--to include buyer controller--> 
 <div ng-controller="BuyerUserCtrl as buyer">
-    <table class="table" width="200">
-          <tr>
-            <td>Email: </td>
-            <td>Email to appear</td>
-        </tr>
-        <tr>
-            <td>Name: </td>
-            <td>Name to appear</td>
-        </tr>
-        <tr>
-            <td>Contact: </td>
-            <td>Contact number to appear</td>
-        </tr>
-        <tr>
-            <td>Address: </td>
-            <td>Address to appear</td>
-        </tr>
-        <tr>
-            <td>Postal Code: </td>
-            <td>Postal Code to appear</td>
-        </tr>
-        <tr>
-            <td>Schedule: </td>
-            <td>Schedule to appear</td>
-        </tr>
-        <tr>
-            <td>Ratings: </td>
-            <td>Ratings to appear</td>
-        </tr>
-    </table>
+    <!--divide into columns. left side put profile pic-->
+    <div class='col-md-4'>
+        <img ng-src="{{buyer[0].profileImage}}" height="300" width="300"/><br><br>
+    </div>
+    <div class='col-md-8'>
+        <table class="table" width="200">
+
+            <tr>
+                <td>Email: </td>
+                <td>{{buyer[0].email}}</td>
+            </tr>
+            <tr>
+                <td>Name: </td>
+                <td>{{buyer[0].name}}</td>
+            </tr>
+            <tr>
+                <td>Contact: </td>
+                <td>{{buyer[0].mobileNumber}}</td>
+            </tr>
+            <tr>
+                <td>Ratings: </td>
+                <td>
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/Feedback/positive.png" height="50" width="50"/></td>
+                            <td><img src="./img/Feedback/neutral.png" height="50" width="50"/></td>
+                            <td><img src="./img/Feedback/negative.png" height="50" width="50"/></td>
+                        </tr>
+                        <tr>
+                            <td>positive: {{buyer[0].feedbackPositive}}</td>
+                            <td>neutral: {{buyer[0].feedbackNeutral}}</td>
+                            <td>negative: {{buyer[0].feedbackNegative}}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>

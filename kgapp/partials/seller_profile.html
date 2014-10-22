@@ -44,7 +44,7 @@
 
     <div class="col-md-6" ng-controller="SellerUserCtrl as seller" id="profile">
         <table class="table">
-            <tr>
+            <tr align="center">
             <img ng-src="{{seller[0].profileImage}}" height="100" width="100"/><br><br>
             </tr>
             <tr>
@@ -89,11 +89,12 @@
                 </td>
             </tr>
         </table>
-        <!-- TO EDIT: show buttons to correct user -->
+        <!-- TO EDIT: show buttons to correct user 
         <button type="submit" class="btn btn-default">Edit Items</button>
-
+        -->
         <div ng-controller="ModalServiceCtrl">
-            <button class="btn btn-primary" href ng-click="show()">Send Offer</button>
+            <button class="btn btn-primary btn-lg btn-block" ng-click="show()">Send Offer</button>
+            <button class="btn btn-default btn-lg btn-block">Cancel</button>
             <script type="text/ng-template" id="modal.html">
                 <div class="modal fade">
                 <div class="modal-dialog">

@@ -124,6 +124,22 @@ myApplication.controller('ModalServiceCtrl', function($scope, ModalService) {
     
 });
 
+myApplication.controller('ModalServiceFeedbackCtrl', function($scope, ModalService) {
+    
+    $scope.show = function() {
+        ModalService.showModal({
+            templateUrl: 'feedback.html',
+            controller: "ModalCloseCtrl"
+        }).then(function(modal) {
+            modal.element.modal();
+            modal.close.then(function(result) {
+                $scope.message = "You said " + result;
+            });
+        });
+    };
+    
+});
+
 myApplication.controller('ModalCloseCtrl', function($scope, close) {
   
  $scope.close = function(result) {

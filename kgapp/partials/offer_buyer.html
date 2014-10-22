@@ -1,14 +1,15 @@
 <h2>Deals Today</h2>
-<div ng-controller="ItemListCtrl as items">
+<div ng-controller="BuyerDealsCtrl as items">
 <!-- create a json file for Ong Lye Tat's deals-->
     <div class="container-fluid">
         <div class="row">
             <div ng-repeat="item in items| filter:item_src | orderBy:orderProp | filter:type" class="col-md-4">
                 <div class="thumbnail">
+                    Date: {{item.Date}}<br/>
+                    Time: {{item.Time}}
                     <a href="#/seller/profile/monicacheng"><img ng-src="{{item.imageURL}}"/></a>
                     <br/>
-                    {{item.name| uppercase}}
-                    <br/>
+                    <h3>{{item.name| uppercase}}</h3>
                     Category: {{item.category}} 
                     <br/>
                     Condition: {{item.condition}} 

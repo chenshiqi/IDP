@@ -7,7 +7,7 @@
     "price": 34.50,
     "sellerId":"MonicaCheng@hotmail.com",
     "imageURL": "./img/Items/Logitech Speakers 1.jpg",
-    "status": "Available"
+    "status": true
   },
   {
     "name":"Old Newspapers",
@@ -17,7 +17,7 @@
     "price": 7,
     "sellerId": "MonicaCheng@hotmail.com",
     "imageURL": "./img/Items/newspaper.jpg",
-    "status": "Pending"
+    "status": false
   },
   { 
     "name": "Spoilt VCR",
@@ -27,7 +27,7 @@
     "price": 5,
     "sellerId": "uncleDesmond@conman.com",
     "imageURL": "./img/Items/vcr.jpg",
-    "status": "Available"
+    "status": true
   }
 ] 
     

@@ -101,8 +101,6 @@ myApplication.controller('BuyerDealsCtrl', ['$scope', '$http',
     
 }]);
 
-
-
 //to assign logic of displaying correct nav bar based on user log in
 $(function () {
     $("#includedBuyerNavBar").load("./templates/navBuyer.html");
@@ -155,3 +153,4 @@ myApplication.controller('ModalCloseCtrl', function($scope, close) {
  };
 
 });
+    

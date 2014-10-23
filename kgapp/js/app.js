@@ -11,6 +11,7 @@ myApplication.config(function ($routeProvider) {
     $routeProvider.when('/edit-item', {templateUrl: 'partials/edit_item.html', controller: 'EditItemCtrl'}); //route according to item ID
     $routeProvider.when('/faq', {templateUrl: 'partials/faq.html', controller: ''});
     $routeProvider.when('/seller/profile/monicacheng', {templateUrl: 'partials/seller_profile.html'});
+    $routeProvider.when('/seller/profile/monicacheng1', {templateUrl: 'partials/seller_profile_Pending.html'});
     $routeProvider.when('/seller/profile/monicacheng/send-offer', {templateUrl: 'partials/send_offer.html'});
     $routeProvider.when('/buyer/profile/onglyetat', {templateUrl: 'partials/buyer_profile.html'});
     $routeProvider.when('/seller/monicacheng/myoffers', {templateUrl: 'partials/offer_seller.html'});
@@ -50,6 +51,7 @@ myApplication.controller('ItemListCtrl', ['$scope', '$http',
         });
     }]);
 
+<<<<<<< HEAD
 myApplication.controller('MainController', function ($scope, $route, $routeParams, $location) {
     $scope.$route = $route;
     $scope.$location = $location;
@@ -65,6 +67,38 @@ myApplication.controller('LoginCtrl', ['$scope', '$http',
                     window.location.href = "/kgapp/index_seller.html";
                 }
             }
+=======
+ myApplication.controller('MainController', function($scope, $route, $routeParams, $location) {
+     $scope.$route = $route;
+     $scope.$location = $location;
+     $scope.$routeParams = $routeParams;
+ });
+ 
+myApplication.controller('LoginCtrl', function ($scope, $http) {
+
+    $http.get('json/users.json').success(function(data){
+        $scope.users = data;   
+        
+            $scope.login = function(){
+                for(var i = 0; i < data.length; i++){
+                if(data[i].email == $scope.email && data[i].password == $scope.password){
+                    
+                    $scope.user = $scope.email;
+                    console.log("what");
+                    window.location.href= "/kgapp/index_" + data[i].type+ ".html";
+                }
+            }
+            }
+            
+    });
+    
+});
+
+myApplication.controller('EditItemCtrl', ['$scope', '$http', 
+    function($scope, $http) {
+        $http.get('json/Item.json').success(function (data){
+           $scope.items = data; 
+>>>>>>> origin/shiqi's-angular
         });
 
     }]);

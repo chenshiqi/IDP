@@ -1,0 +1,90 @@
+[
+  {
+    "email":"MonicaCheng@hotmail.com",
+    "name":" Monica Cheng",
+    "mobileNumber": 91558232,
+    "address":" Blk 324 Yishun Central #07-285",
+    "postalCode": 760324,
+    "feedbackPositive":4,
+    "feedbackNeutral":5,
+    "feedbackNegative":6,
+    "password":"1234",
+    "schedule" : "Mon-Fri 10am - 3pm",
+    "type":"seller"
+  },
+  {
+    "email":"BrianMooney@NorthernIreland.com",
+    "name":"Brian Mooney",
+    "mobileNumber":98765432,
+    "address":" Sentosa Cove Mansion",
+    "postalCode": 123456,
+    "feedbackPositive": 2,
+    "feedbackNeutral":0,
+    "feedbackNegative":0,
+    "password":"1234",
+    "schedule" : "Mon-Fri 10am - 3pm",
+    "type":"seller"
+  },
+  {
+    "email":"uncleDesmond@conman.com",
+    "name":" Desmond Chan",
+    "mobileNumber": 99823464,
+    "address":" 6 Mounbatten Drive",
+    "postalCode": 442312,
+    "feedbackPositive": 2,
+    "feedbackNeutral":3,
+    "feedbackNegative":6,
+    "password":"1234",
+    "schedule" : "Mon-Fri 10am - 3pm",
+    "type":"seller"
+  },
+  {
+    "email":"BenBarker@msn.com",
+    "name":" Benjamin Bucket",
+    "mobileNumber": 95673243,
+    "address":" Blk 309 Yishun Ring Road #05-232",
+    "postalCode": 760309,
+    "feedbackPositive": 10,
+    "feedbackNeutral":3,
+    "feedbackNegative":4,
+    "password":"1234",
+    "schedule" : "Mon-Fri 10am - 3pm",
+    "type":"seller"
+  },
+    {
+    "email":"unclekiap@hotmail.com",
+    "name":" Ong Lye Tat",
+    "mobileNumber": 91558232,
+    "address":" Blk 324 Tampines Central #07-285",
+    "postalCode": 960324,
+    "feedbackPositive":100,
+    "feedbackNeutral":2,
+    "feedbackNegative":1,
+    "password":"1234",
+    "type":"buyer"
+  },
+  {
+    "email":"karunguniMAN@yahoo.com",
+    "name":"Ong Teng Cheong",
+    "mobileNumber": 987656543,
+    "address":" blk 234 Tanglin Road #02-256",
+    "postalCode":792234,
+    "feedbackPositive":99,
+    "feedbackNeutral":2,
+    "feedbackNegative":3,
+    "password":"1234",
+    "type":"buyer"
+  },
+  {
+    "email":"rubbishCollector@gmail.com",
+    "name":" Lee Hsien Chai",
+    "mobileNumber": 92843743,
+    "address":" 15 Nassim Road",
+    "postalCode": 999415,
+    "feedbackPositive": 0,
+    "feedbackNeutral":5,
+    "FeedbackNegative":99,
+    "password":"1234",
+    "type": "buyer"
+  }
+ ]

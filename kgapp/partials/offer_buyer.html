@@ -1,3 +1,29 @@
-deals today
+<h2>Deals Today</h2>
+<div ng-controller="BuyerDealsCtrl as items">
+<!-- create a json file for Ong Lye Tat's deals-->
+    <div class="container-fluid">
+        <div class="row">
+            <div ng-repeat="item in items| filter:item_src | orderBy:orderProp | filter:type" class="col-md-4">
+                <div class="thumbnail">
+                    Date: {{item.Date}}<br/>
+                    Time: {{item.Time}}
+                    <a href="#/seller/profile/monicacheng"><img ng-src="{{item.imageURL}}"/></a>
+                    <br/>
+                    <h3>{{item.name| uppercase}}</h3>
+                    Category: {{item.category}} 
+                    <br/>
+                    Condition: {{item.condition}} 
+                    <br/>
+                    Price: {{item.price}}
+                    <br/>
+                    Description: {{item.description}}
+                    <br/>
+                    Seller: {{item.sellerId}}
 
-Future confirmed deals
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2>Future Deals</h2>

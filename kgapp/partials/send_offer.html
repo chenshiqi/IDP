@@ -1,35 +1,45 @@
-<style>
-    body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-    }
-    row{
-        padding-top: 40px;
-    }
-    table { table-layout: fixed; }
-    td { width: 33%; }
-    #buttons{
-        padding-top: 20px;
-    }
-</style>
 
-<form role="form">
+<div class="container" ng-controller="ModalServiceCtrl">
+
+    <h3>Angular Modal Service</h3>
+    <a class="btn btn-default" href ng-click="show()">Show a Modal</a>
+    <p>{{message}}</p>
+
+    <!-- The actual modal template, just a bit o bootstrap -->
+
+    <script type="text/ng-template" id="modal.html">
+         <div class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Send Offer Details</h4>
+              </div>
+              <div class="modal-body">
+                <form role="form">
     <div class="form-group">
         <label for="date" class="col-md-3" align="right">
             Date
         </label>
         <div class="col-md-8">
-            <input type="date" class="form-control" id="itemName" placeholder="Enter Date">
+            <input type="date" class="form-control" id="date" placeholder="Enter Date">
             <p></p>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="time" class="col-md-3" align="right">
-            Time
+        <label for="time" class="col-sm-3" align="right">
+            Time Start:
         </label>
-        <div class="col-md-8">
-            <input type="time" class="form-control" id="category" placeholder="Enter Time">
+        <div class="col-md-3">
+            <input type="time" class="form-control" id="timeStart" placeholder="Enter Start Time">
+            <p></p>
+        </div>
+        <label for="time" class="col-sm-3" align="right">
+            Time End
+        </label>
+        <div class="col-md-3">
+            <input type="time" class="form-control" id="timeEnd" placeholder="Enter End Time">
             <p></p>
         </div>
     </div>  
@@ -37,20 +47,21 @@
         <label for="offerPrice" class="col-md-3" align="right">
             Offer Price
         </label>
-        <div class="col-md-8">
             <div class="input-group">
                 <span class="input-group-addon">$</span>
                 <input type="number" min="0" step="0.01" class="form-control" id="price" placeholder="Enter price e.g 5.95">
                 <p></p>
             </div>
-        </div>
+      
     </div>
- <div class="col-md-8" align="center" id="buttons">
-    <button type="submit" class="btn btn-primary" value="submit ">
-        Send Offer
-    </button>
-    <button type="submit" class="btn btn-primary" value="cancel">
-        Cancel
-    </button>
- </div>
-</form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" ng-click="close('Cancel')" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" ng-click="close('Send Offer')" class="btn btn-primary" data-dismiss="modal">Send Offer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </script>
+
+</div>

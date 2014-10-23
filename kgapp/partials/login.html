@@ -43,15 +43,33 @@
 <div ng-controller="LoginCtrl">    
     <form class="form-signin" role="form">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus ng-model="email">
+        <input type="password" name="password" class="form-control" placeholder="Password" required ng-model="password">
         <a href="#">Forgot Password</a>
         <label class="checkbox">
             <input type="checkbox" value="remember-me"> Remember me
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="check(this.form)" value="Login" >Sign in</button>
+<<<<<<< HEAD
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()" value="Login" >Sign in</button>
         todo: redirect buyer to href=index_buyer.html and seller to href=index_seller.html
+=======
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="check(this.form)" value="Login" >Sign in</button>
+>>>>>>> FETCH_HEAD
     </form>
+
+    
+    <script language="javascript">
+        $scope.login = function(){
+            
+            
+            for(var i = 0; i < $scope.users.length; i++){
+                if($scope.users[i].email == email && $scope.users[i].password == password){
+                    window.location.href= "/kgapp/index_seller.html";
+                }
+            }
+        }
+    </script>
+    <!--
 <script language="javascript">
 function check(form)/*function to check userid & password*/
 {
@@ -60,7 +78,7 @@ if(form.email.value == "MonicaCheng@hotmail.com" && form.password.value == "1234
 {
 window.location.href= "/kgapp/index_seller.html" /*opens the target page while Id & password matches*/
 }
-else if(form.email.value == "ongKG@hotmail.com" && form.password.value == "1234") {
+else if(form.email.value == "OngLyeTat@hotmail.com" && form.password.value == "1234") {
   window.location.href= "/kgapp/index_buyer.html" /*opens the target page while Id & password matches*/  
 }
 else
@@ -69,4 +87,5 @@ alert("Error Password or Username")/*displays error message*/
 }
 }
 </script>
+    -->
 </div>

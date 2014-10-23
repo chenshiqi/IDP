@@ -7,7 +7,7 @@
     "price": 34.50,
     "sellerId":"MonicaCheng@hotmail.com",
     "imageURL": "./img/Items/Logitech Speakers 1.jpg",
-    "status": "Available"
+    "status": true
   },
   {
     "name":"Old Newspapers",
@@ -17,7 +17,7 @@
     "price": 7,
     "sellerId": "MonicaCheng@hotmail.com",
     "imageURL": "./img/Items/newspaper.jpg",
-    "status": "Pending"
+    "status": false
   },
   { 
     "name": "Spoilt VCR",
@@ -27,7 +27,27 @@
     "price": 5,
     "sellerId": "uncleDesmond@conman.com",
     "imageURL": "./img/Items/vcr.jpg",
-    "status": "Available"
+    "status": true
+  },
+    { 
+    "name": "Stack of maagzines",
+    "category": "Magazines",
+    "condition": 2,
+    "description": "Want to get rid an old stack of magazines",
+    "price": 2,
+    "sellerId": "uncleDesmond@conman.com",
+    "imageURL": "./img/Items/Stack-of-magazines.jpg",
+    "status": true
+  },
+    { 
+    "name": "nokia 3330",
+    "category": "Electronics",
+    "condition": 5,
+    "description": "Nokia phone is still functioning and is in good condition.",
+    "price": 10,
+    "sellerId": "uncleDesmond@conman.com",
+    "imageURL": "./img/Items/nokia3330.jpeg",
+    "status": true
   }
 ] 
     

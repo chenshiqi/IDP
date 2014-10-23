@@ -1,4 +1,4 @@
-var myApplication = angular.module('myApplication', ['ngRoute']);
+var myApplication = angular.module('myApplication', ['ngRoute', 'angularModalService']);
 
 myApplication.config(function ($routeProvider) {
     $routeProvider.when('/welcome', {templateUrl: 'partials/welcome.html', controller:''});
@@ -15,7 +15,8 @@ myApplication.config(function ($routeProvider) {
     $routeProvider.when('/buyer/profile/onglyetat', {templateUrl: 'partials/buyer_profile.html'});
     $routeProvider.when('/seller/monicacheng/myoffers', {templateUrl: 'partials/offer_seller.html'});
     $routeProvider.when('/buyer/onglyetat/myoffers', {templateUrl: 'partials/offer_buyer.html'});
-    $routeProvider.when('/leave-feedback', {templateUrl: 'partials/feedback.html'})
+    $routeProvider.when('/leave-feedback', {templateUrl: 'partials/feedback.html'});
+    $routeProvider.when('/send-offer', {templateUrl: 'partials/send_offer.html'});
     $routeProvider.otherwise({redirectTo:'/welcome'});
 });
 
@@ -57,10 +58,16 @@ myApplication.controller('ItemListCtrl', ['$scope', '$http',
  
 myApplication.controller('LoginCtrl', ['$scope', '$http',
     function ($scope, $http) {
-    console.log("hello");
+    $http.get('json/users.json').success(function(data){
+        $scope.users = data;   
+            for(var i = 0; i < data.length; i++){
+                if(data[i].email == email && data[i].password == password){
+                    window.location.href= "/kgapp/index_seller.html";
+                }
+            }
+    });
     
-        
-    }]);
+}]);
 
 myApplication.controller('EditItemCtrl', ['$scope', '$http', 
     function($scope, $http) {
@@ -86,6 +93,15 @@ myApplication.controller('BuyerUserCtrl', ['$scope', '$http',
     
 }]);
 
+myApplication.controller('BuyerDealsCtrl', ['$scope', '$http', 
+    function($scope, $http) {
+        $http.get('json/BuyerDeals.json').success(function (data){
+           $scope.items = data; 
+        });
+    
+}]);
+
+
 
 //to assign logic of displaying correct nav bar based on user log in
 $(function () {
@@ -100,3 +116,42 @@ $(function () {
     $("#includedNavBar").load("./templates/nav.html");
 });
 
+myApplication.controller('ModalServiceCtrl', function($scope, ModalService) {
+    
+    $scope.show = function() {
+        ModalService.showModal({
+            templateUrl: 'modal.html',
+            controller: "ModalCloseCtrl"
+        }).then(function(modal) {
+            modal.element.modal();
+            modal.close.then(function(result) {
+                $scope.message = "You said " + result;
+            });
+        });
+    };
+    
+});
+
+myApplication.controller('ModalServiceFeedbackCtrl', function($scope, ModalService) {
+    
+    $scope.show = function() {
+        ModalService.showModal({
+            templateUrl: 'feedback.html',
+            controller: "ModalCloseCtrl"
+        }).then(function(modal) {
+            modal.element.modal();
+            modal.close.then(function(result) {
+                $scope.message = "You said " + result;
+            });
+        });
+    };
+    
+});
+
+myApplication.controller('ModalCloseCtrl', function($scope, close) {
+  
+ $scope.close = function(result) {
+ 	close(result, 500); // close, but give 500ms for bootstrap to animate
+ };
+
+});

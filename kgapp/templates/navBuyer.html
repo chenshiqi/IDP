@@ -1,43 +1,101 @@
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#/all_listings">KarungGuni App</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/all_listings">KarungGuni App</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#/all_listings">All Listings</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown">My Page <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#/buyer/profile/onglyetat">View My Profile</a></li>
-                <li><a href="#/buyer/onglyetat/myoffers">My Offers</a></li>
-              </ul>
-            </li> 
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-            
-            <div class="navbar-form pull-right">
-                    <a class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">
-                            <button type="button" class="btn btn-default btn-sm">
-                                <span class="glyphicon glyphicon-bell"></span>
-                            </button>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li class="dropdown-header">notifications list</li>
-                            <li><a href="#">One notification</a></li>
-                            <li><a href="#">Two notification</a></li>
-                        </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="#/all_listings">All Listings</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">My Page <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/buyer/profile/onglyetat">View My Profile</a></li>
+                        <li><a href="#/buyer/onglyetat/myoffers">My Offers</a></li>
+                    </ul>
+                </li> 
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+
+            <div class="navbar-form pull-right" ng-controller="ModalServiceFeedbackCtrl">
+
+                <div class="dropdown">
+                    Welcome, <a href="#/buyer/profile/onglyetat">Ong Lye Tat</a>!
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-default btn-md">
+                            <span class="glyphicon glyphicon-bell"></span>
+                        </button>
                     </a>
-                    <a href="logout.html" class="btn btn-primary">Log Out</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">notifications list</li>
+                        <li><a href="#/leave-feedback">Transaction Complete! Leave a feedback for Monica!</a></li>
+                        <li><a>Spoilt VCR is on sale again! Send offer?</a></li>
+                    </ul>
+                    <a href="index.html" class="btn btn-primary">Log Out</a>
+
+                    <!-- The actual modal template, just a bit o bootstrap -->
+                    <script type="text/ng-template" id="feedback.html">
+                    <div class="modal fade">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Leave a Feedback!</h4>
+                    </div>
+                    <div class="modal-body">
+                    <table class="table">
+                        <tr>
+                            <td>
+                               <img src="./img/Feedback/positive.png"/>
+                            </td>
+                            <td>
+                                <img src="./img/Feedback/neutral.png"/>
+                            </td>
+                            <td>
+                                <img src="./img/Feedback/negative.png"/>
+                            </td>
+                        </tr>
+                        <form role="form">
+                            <tr>
+                                <td>
+                                    <label class="radio" class="col-md-4">
+                                        <input type="radio" name="rating" id="rating" value="positive">
+                                        Positive
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="radio" class="col-md-4">
+                                        <input type="radio" name="feedback" id="rating" value="neutral">
+                                        Neutral
+                                    </label>                
+                                </td>
+                                <td>
+                                    <label class="radio" class="col-md-4">
+                                        <input type="radio" name="feedback" id="rating" value="negative">
+                                        Negative
+                                    </label>
+                                </td>
+                            </tr>
+                        </form>
+                    </table>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" ng-click="close('Cancel')" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" ng-click="close('Submit')" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </script>
+                </div>
             </div>
+
         </div><!--/.nav-collapse -->
-      </div>
     </div>
+</div>

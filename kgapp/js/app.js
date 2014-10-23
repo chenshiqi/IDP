@@ -11,6 +11,7 @@ myApplication.config(function ($routeProvider) {
     $routeProvider.when('/edit-item', {templateUrl: 'partials/edit_item.html', controller:'EditItemCtrl'}); //route according to item ID
     $routeProvider.when('/faq', {templateUrl: 'partials/faq.html', controller:''});
     $routeProvider.when('/seller/profile/monicacheng', {templateUrl: 'partials/seller_profile.html'});
+    $routeProvider.when('/seller/profile/monicacheng1', {templateUrl: 'partials/seller_profile_Pending.html'});
     $routeProvider.when('/seller/profile/monicacheng/send-offer', {templateUrl: 'partials/send_offer.html'});
     $routeProvider.when('/buyer/profile/onglyetat', {templateUrl: 'partials/buyer_profile.html'});
     $routeProvider.when('/seller/monicacheng/myoffers', {templateUrl: 'partials/offer_seller.html'});

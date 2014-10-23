@@ -12,8 +12,8 @@
         <div ng-repeat="item in items">
             <div class="thumbnail">
                 <input type="checkbox" value="itemID">
-                <span class="label label-success" ng-show="{{item.status}}">Available</span>
-                <span class="label label-warning" ng-hide="{{item.status}}">Pending</span>
+                <span class="label label-success" ng-hide="{{item.status}}">Available</span>
+                <span class="label label-warning" ng-show="{{item.status}}">Pending</span>
                 <img ng-src="{{item.imageURL}}"/>
                 <table>
                     <tr>

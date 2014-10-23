@@ -50,24 +50,6 @@ myApplication.controller('ItemListCtrl', ['$scope', '$http',
             $scope.items = data;
         });
     }]);
-
-<<<<<<< HEAD
-myApplication.controller('MainController', function ($scope, $route, $routeParams, $location) {
-    $scope.$route = $route;
-    $scope.$location = $location;
-    $scope.$routeParams = $routeParams;
-});
-
-myApplication.controller('LoginCtrl', ['$scope', '$http',
-    function ($scope, $http) {
-        $http.get('json/users.json').success(function (data) {
-            $scope.users = data;
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].email == email && data[i].password == password) {
-                    window.location.href = "/kgapp/index_seller.html";
-                }
-            }
-=======
  myApplication.controller('MainController', function($scope, $route, $routeParams, $location) {
      $scope.$route = $route;
      $scope.$location = $location;
@@ -98,7 +80,6 @@ myApplication.controller('EditItemCtrl', ['$scope', '$http',
     function($scope, $http) {
         $http.get('json/Item.json').success(function (data){
            $scope.items = data; 
->>>>>>> origin/shiqi's-angular
         });
 
     }]);

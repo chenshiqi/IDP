@@ -3,6 +3,7 @@ var myApplication = angular.module('myApplication', ['ngRoute', 'angularModalSer
 myApplication.config(function ($routeProvider) {
     $routeProvider.when('/welcome', {templateUrl: 'partials/welcome.html', controller: ''});
     $routeProvider.when('/all_listings', {templateUrl: 'partials/all_listings.html', controller: 'ItemListCtrl'});
+    $routeProvider.when('/all_listings_NoSpeaker', {templateUrl: 'partials/all_listings_NoSpeaker.html', controller: 'ItemListCtrlNoSpeaker'});
     $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'LoginCtrl'});
     $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: ''});
     $routeProvider.when('/register/seller', {templateUrl: 'partials/register_seller.html', controller: ''});
@@ -51,6 +52,14 @@ myApplication.controller('ItemListCtrl', ['$scope', '$http',
             $scope.items = data;
         });
     }]);
+
+myApplication.controller('ItemListCtrlNoSpeaker', ['$scope', '$http',
+    function ($scope, $http) {
+        $http.get('json/Item_NoSpeaker.json').success(function (data) {
+            $scope.itemsNoSpeaker = data;
+        });
+    }]);
+
 myApplication.controller('MainController', function ($scope, $route, $routeParams, $location) {
     $scope.$route = $route;
     $scope.$location = $location;
@@ -67,8 +76,12 @@ myApplication.controller('LoginCtrl', function ($scope, $http) {
                 if (data[i].email == $scope.email && data[i].password == $scope.password) {
 
                     $scope.user = $scope.email;
-                    console.log("what");
-                    window.location.href = "/kgapp/index_" + data[i].type + ".html";
+                    if (data[i].type=="seller") {
+                        window.location.href = "/kgapp/index_" + data[i].type + ".html#/all_listings_NoSpeaker";
+                    } else {
+                        window.location.href = "/kgapp/index_" + data[i].type + ".html";
+                    }
+                    
                 }
             }
         }

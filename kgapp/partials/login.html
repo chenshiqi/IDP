@@ -50,20 +50,21 @@
             <input type="checkbox" value="remember-me"> Remember me
         </label>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="check(this.form)" value="Login" >Sign in</button>
+        <!--<button class="btn btn-lg btn-primary btn-block" type="submit" onclick="check(this.form)" value="Login" ng-click="login()">Sign in</button>-->
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" ng-click="login()">Sign in</button>
     </form>
 
     
     <script language="javascript">
-        $scope.login = function(){
-            
-            
-            for(var i = 0; i < $scope.users.length; i++){
-                if($scope.users[i].email == email && $scope.users[i].password == password){
-                    window.location.href= "/kgapp/index_seller.html";
-                }
-            }
-        }
+//        $scope.login = function(){
+//            
+//            
+//            for(var i = 0; i < $scope.users.length; i++){
+//                if($scope.users[i].email == email && $scope.users[i].password == password){
+//                    window.location.href= "/kgapp/index_seller.html";
+//                }
+//            }
+//        }
     </script>
     <!--
 <script language="javascript">

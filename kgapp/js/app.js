@@ -56,18 +56,25 @@ myApplication.controller('ItemListCtrl', ['$scope', '$http',
      $scope.$routeParams = $routeParams;
  });
  
-myApplication.controller('LoginCtrl', ['$scope', '$http',
-    function ($scope, $http) {
+myApplication.controller('LoginCtrl', function ($scope, $http) {
+
     $http.get('json/users.json').success(function(data){
         $scope.users = data;   
-            for(var i = 0; i < data.length; i++){
-                if(data[i].email == email && data[i].password == password){
-                    window.location.href= "/kgapp/index_seller.html";
+        
+            $scope.login = function(){
+                for(var i = 0; i < data.length; i++){
+                if(data[i].email == $scope.email && data[i].password == $scope.password){
+                    
+                    $scope.user = $scope.email;
+                    console.log("what");
+                    window.location.href= "/kgapp/index_" + data[i].type+ ".html";
                 }
             }
+            }
+            
     });
     
-}]);
+});
 
 myApplication.controller('EditItemCtrl', ['$scope', '$http', 
     function($scope, $http) {

@@ -16,11 +16,11 @@
     </style>
   </head>
 
-  <body ng-controller="MainController">
+  <body ng-controller="LoginCtrl">
 
     <!-- Fixed navbar -->
     <!-- TODO: Show correct nav bar -->
-    <div id="includedSellerNavBar"></div>
+    <div id="includedSellerNavBar" ng-view></div>
     
     <div class="container">
     <div ng-view></div>
@@ -28,11 +28,13 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <!--
         <script type="text/javascript" src="./js/libs/angular.js/angular.js"></script>
         <script type="text/javascript" src="./js/libs/angular.js/angular-route.js"></script>
         <script type="text/javascript" src="./js/libs/angular.js/angular-modal-service.js"></script>
         <script type="text/javascript" src="./js/libs/angular.js/angular-file-upload.js"></script>
         <script type="text/javascript" src="./js/app.js"></script>
+    -->
     </div>
   </body>
 </html>

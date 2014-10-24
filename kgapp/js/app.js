@@ -20,7 +20,12 @@ myApplication.config(function ($routeProvider) {
     $routeProvider.when('/buyer/onglyetat/myoffers', {templateUrl: 'partials/offer_buyer.html'});
     $routeProvider.when('/leave-feedback', {templateUrl: 'partials/feedback.html'});
     $routeProvider.when('/send-offer', {templateUrl: 'partials/send_offer.html'});
-    $routeProvider.otherwise({redirectTo: '/welcome'});
+
+
+    $routeProvider.when('/index_seller', {templateUrl:'index_seller.html', controller:'LoginCtrl'});
+    $routeProvider.when('/index_buyer', {templateUrl:'index_buyer.html', controller:'LoginCtrl'});
+    $routeProvider.otherwise({redirectTo:'/welcome'});
+
 });
 
 myApplication.factory('dataFactory', function () {
@@ -65,27 +70,62 @@ myApplication.controller('MainController', function ($scope, $route, $routeParam
     $scope.$location = $location;
     $scope.$routeParams = $routeParams;
 });
+ myApplication.controller('MainController', function($scope, $route, $routeParams, $location) {
+     $scope.$route = $route;
+     $scope.$location = $location;
+     $scope.$routeParams = $routeParams;
+     $("#includedNavBar").load("./templates/nav.html");
+     
+ });
 
-myApplication.controller('LoginCtrl', function ($scope, $http) {
 
-    $http.get('json/users.json').success(function (data) {
-        $scope.users = data;
 
-        $scope.login = function () {
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].email == $scope.email && data[i].password == $scope.password) {
 
-                    $scope.user = $scope.email;
-                    if (data[i].type=="seller") {
-                        window.location.href = "/kgapp/index_" + data[i].type + ".html#/all_listings_NoSpeaker";
-                    } else {
-                        window.location.href = "/kgapp/index_" + data[i].type + ".html";
+ 
+myApplication.controller('LoginCtrl', function ($scope, $http,$rootScope, $location) {
+
+    $http.get('json/users.json').success(function(data){
+        $scope.users = data;   
+        var name;
+        var pos;
+            $scope.login = function(){
+                for(var i = 0; i < data.length; i++){
+                if(data[i].email == $scope.email && data[i].password == $scope.password){
+                    
+
+                    name = data[i].name;
+                    $rootScope.name = name;
+                    $scope.name = name;
+                    pos = i;
+                    var type = data[i].type;
+                    $scope.type = type;
+                    console.log(name);
+                    console.log($scope.type);
+                    //window.location.href= "/kgapp/index_" + data[i].type+ ".html";
+                    $location.path('/all_listings');
+                    if($scope.type == 'seller'){
+                        $("#includedNavBar").load("./templates/navSeller.html");
+                    }else if($scope.type == 'buyer'){
+                        $("#includedNavBar").load("./templates/navBuyer.html");
+                    }else{
+                        $("#includedNavBar").load("./templates/nav.html");
+
                     }
                     
                 }
             }
+
         }
 
+
+            $scope.logout = function(){
+                $scope.type = '';
+                $("#includedNavBar").load("./templates/nav.html");
+                $location.path('index');
+            }
+        console.log(pos);
+        console.log(name);
+            
     });
 
 });
@@ -131,17 +171,19 @@ myApplication.controller('BuyerDealsCtrl', ['$scope', '$http',
     }]);
 
 //to assign logic of displaying correct nav bar based on user log in
-$(function () {
-    $("#includedBuyerNavBar").load("./templates/navBuyer.html");
-});
 
-$(function () {
-    $("#includedSellerNavBar").load("./templates/navSeller.html");
-});
+//$(function () {
+//    $("#includedBuyerNavBar").load("./templates/navBuyer.html");
+//});
+//
+//$(function () {
+//    $("#includedSellerNavBar").load("./templates/navSeller.html");
+//});
+//
+//$(function () {
+//    $("#includedNavBar").load("./templates/nav.html");
+//});
 
-$(function () {
-    $("#includedNavBar").load("./templates/nav.html");
-});
 
 myApplication.controller('ModalServiceCtrl', function ($scope, ModalService) {
 
@@ -247,3 +289,5 @@ myApplication.directive('ngThumb', ['$window', function($window){
         };       
         
 }]);
+
+                    

@@ -1,5 +1,6 @@
 <!-- Fixed navbar -->
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<body ng-app>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="LoginCtrl">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -24,10 +25,10 @@
                 <li><a href="#faq">FAQ</a></li>
             </ul>
 
-            <div class="navbar-form pull-right">
+            <div class="navbar-form pull-right" >
                 
                 <div class="dropdown">
-                    Welcome, <a href="#/seller/profile/monicacheng">{{user}}</a>!
+                    Welcome, <a href="#/seller/profile/monicacheng">Monica Cheng</a>!
                     <a class="dropdown-toggle" data-toggle="dropdown">
                         <button type="button" class="btn btn-default btn-md">
                             <span class="glyphicon glyphicon-bell"></span>
@@ -38,10 +39,12 @@
                         <li><a href="#">One notification</a></li>
                         <li><a href="#">Two notification</a></li>
                     </ul>
-                    <a href="index.html" class="btn btn-primary">Log Out</a>
+                    <a href="index.html" class="btn btn-primary" ng-click="logout()">Log Out</a>
                 </div>
                 
             </div>
         </div><!--/.nav-collapse -->
     </div>
 </div>
+    
+</body>

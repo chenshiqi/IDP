@@ -71,7 +71,6 @@ myApplication.controller('MainController', function ($scope, $route, $routeParam
 
 
 
-
  
 myApplication.controller('LoginCtrl', function ($scope, $http,$rootScope, $location) {
 
@@ -101,14 +100,12 @@ myApplication.controller('LoginCtrl', function ($scope, $http,$rootScope, $locat
                     }else{
                         $("#includedNavBar").load("./templates/nav.html");
 
-<<<<<<< HEAD
+
                     }
-                    
-=======
+
                     $scope.user = $scope.email;
                     console.log("what");
                     window.location.href = "/kgapp/index_" + data[i].type + ".html";
->>>>>>> parent of 29034a1... Before & After adding item
                 }
             }
 

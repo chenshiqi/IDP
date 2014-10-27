@@ -3,7 +3,6 @@ var myApplication = angular.module('myApplication', ['ngRoute', 'angularModalSer
 myApplication.config(function ($routeProvider) {
     $routeProvider.when('/welcome', {templateUrl: 'partials/welcome.html', controller: ''});
     $routeProvider.when('/all_listings', {templateUrl: 'partials/all_listings.html', controller: 'ItemListCtrl'});
-    $routeProvider.when('/all_listings_NoSpeaker', {templateUrl: 'partials/all_listings_NoSpeaker.html', controller: 'ItemListCtrlNoSpeaker'});
     $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'LoginCtrl'});
     $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: ''});
     $routeProvider.when('/register/seller', {templateUrl: 'partials/register_seller.html', controller: ''});
@@ -57,14 +56,6 @@ myApplication.controller('ItemListCtrl', ['$scope', '$http',
             $scope.items = data;
         });
     }]);
-
-myApplication.controller('ItemListCtrlNoSpeaker', ['$scope', '$http',
-    function ($scope, $http) {
-        $http.get('json/Item_NoSpeaker.json').success(function (data) {
-            $scope.itemsNoSpeaker = data;
-        });
-    }]);
-
 myApplication.controller('MainController', function ($scope, $route, $routeParams, $location) {
     $scope.$route = $route;
     $scope.$location = $location;
@@ -110,8 +101,14 @@ myApplication.controller('LoginCtrl', function ($scope, $http,$rootScope, $locat
                     }else{
                         $("#includedNavBar").load("./templates/nav.html");
 
+<<<<<<< HEAD
                     }
                     
+=======
+                    $scope.user = $scope.email;
+                    console.log("what");
+                    window.location.href = "/kgapp/index_" + data[i].type + ".html";
+>>>>>>> parent of 29034a1... Before & After adding item
                 }
             }
 

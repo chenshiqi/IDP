@@ -11,7 +11,6 @@ myApplication.config(function ($routeProvider) {
     $routeProvider.when('/edit-item', {templateUrl: 'partials/edit_item.html', controller: 'EditItemCtrl'}); //route according to item ID
     $routeProvider.when('/faq', {templateUrl: 'partials/faq.html', controller: ''});
     $routeProvider.when('/seller/profile/monicacheng', {templateUrl: 'partials/seller_profile.html'});
-    $routeProvider.when('/buyer/viewProfile/monicacheng', {templateUrl: 'partials/seller_profile_view.html'});
     $routeProvider.when('/seller/profile/monicacheng1', {templateUrl: 'partials/seller_profile_Pending.html'});
     $routeProvider.when('/seller/profile/monicacheng/send-offer', {templateUrl: 'partials/send_offer.html'});
     $routeProvider.when('/buyer/profile/onglyetat', {templateUrl: 'partials/buyer_profile.html'});
@@ -234,6 +233,42 @@ myApplication.controller('UploadController', ['$scope', 'FileUploader', function
                 return '|jpg|png|jpeg|bmp|gif|'.indexOf(type) !== -1;
             }
         });
+
+        // CALLBACKS
+
+        uploader.onWhenAddingFileFailed = function (item /*{File|FileLikeObject}*/, filter, options) {
+            console.info('onWhenAddingFileFailed', item, filter, options);
+        };
+        uploader.onAfterAddingFile = function (fileItem) {
+            console.info('onAfterAddingFile', fileItem);
+        };
+        uploader.onAfterAddingAll = function (addedFileItems) {
+            console.info('onAfterAddingAll', addedFileItems);
+        };
+        uploader.onBeforeUploadItem = function (item) {
+            console.info('onBeforeUploadItem', item);
+        };
+        uploader.onProgressItem = function (fileItem, progress) {
+            console.info('onProgressItem', fileItem, progress);
+        };
+        uploader.onProgressAll = function (progress) {
+            console.info('onProgressAll', progress);
+        };
+        uploader.onSuccessItem = function (fileItem, response, status, headers) {
+            console.info('onSuccessItem', fileItem, response, status, headers);
+        };
+        uploader.onErrorItem = function (fileItem, response, status, headers) {
+            console.info('onErrorItem', fileItem, response, status, headers);
+        };
+        uploader.onCancelItem = function (fileItem, response, status, headers) {
+            console.info('onCancelItem', fileItem, response, status, headers);
+        };
+        uploader.onCompleteItem = function (fileItem, response, status, headers) {
+            console.info('onCompleteItem', fileItem, response, status, headers);
+        };
+        uploader.onCompleteAll = function () {
+            console.info('onCompleteAll');
+        };
 
         console.info('uploader', uploader);
     }]);

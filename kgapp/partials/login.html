@@ -50,12 +50,12 @@
             <input type="checkbox" value="remember-me"> Remember me
         </label>
 
-        <!--<button class="btn btn-lg btn-primary btn-block" type="submit" onclick="check(this.form)" value="Login" ng-click="login()">Sign in</button>-->
-        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" ng-click="login()">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="check(this.form)" value="Login">Sign in</button>
+      <!--<button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" ng-click="login()">Sign in</button>-->
     </form>
 
     
-    <script language="javascript">
+   <!-- <script language="javascript">
 //        $scope.login = function(){
 //            
 //            
@@ -65,18 +65,18 @@
 //                }
 //            }
 //        }
-    </script>
-    <!--
+    </script> -->
+    
 <script language="javascript">
 function check(form)/*function to check userid & password*/
 {
 /*the following code checkes whether the entered userid and password are matching*/
 if(form.email.value == "MonicaCheng@hotmail.com" && form.password.value == "1234")
 {
-window.location.href= "/kgapp/index_seller.html" /*opens the target page while Id & password matches*/
+window.location.href= "/kgapp/index_seller.html#/all_listings2" /*opens the target page while Id & password matches*/
 }
 else if(form.email.value == "OngLyeTat@hotmail.com" && form.password.value == "1234") {
-  window.location.href= "/kgapp/index_buyer.html" /*opens the target page while Id & password matches*/  
+  window.location.href= "/kgapp/index_buyer.html#/all_listings" /*opens the target page while Id & password matches*/  
 }
 else
 {
@@ -84,5 +84,5 @@ alert("Error Password or Username")/*displays error message*/
 }
 }
 </script>
-    -->
+   
 </div>

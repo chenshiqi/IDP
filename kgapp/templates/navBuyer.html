@@ -33,66 +33,15 @@
                         </button>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li class="dropdown-header">notifications list</li>
-                        <li><a href="#/leave-feedback">Transaction Complete! Leave a feedback for Monica!</a></li>
-                        <li><a>Spoilt VCR is on sale again! Send offer?</a></li>
+                        <li class="dropdown-header">Notifications</li>
+                        <li class="divider"></li>
+                        <li><a href="#/leave-feedback"><span class="badge">11:17AM | 23/10/2014</span><br> Transaction Complete!<br> Leave a feedback for Monica!</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#/buyer/onglyetat/myoffers"><span class="badge">9:48AM 22/10/2014</span><br> Monica has accepted your offer!<br>Check My Offers page for details</a></li>
+                        <li class="divider"></li>
                     </ul>
                     <a href="index.html" class="btn btn-primary">Log Out</a>
 
-                    <!-- The actual modal template, just a bit o bootstrap -->
-                    <script type="text/ng-template" id="feedback.html">
-                    <div class="modal fade">
-                    <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                    <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Leave a Feedback!</h4>
-                    </div>
-                    <div class="modal-body">
-                    <table class="table">
-                        <tr>
-                            <td>
-                               <img src="./img/Feedback/positive.png"/>
-                            </td>
-                            <td>
-                                <img src="./img/Feedback/neutral.png"/>
-                            </td>
-                            <td>
-                                <img src="./img/Feedback/negative.png"/>
-                            </td>
-                        </tr>
-                        <form role="form">
-                            <tr>
-                                <td>
-                                    <label class="radio" class="col-md-4">
-                                        <input type="radio" name="rating" id="rating" value="positive">
-                                        Positive
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class="radio" class="col-md-4">
-                                        <input type="radio" name="feedback" id="rating" value="neutral">
-                                        Neutral
-                                    </label>                
-                                </td>
-                                <td>
-                                    <label class="radio" class="col-md-4">
-                                        <input type="radio" name="feedback" id="rating" value="negative">
-                                        Negative
-                                    </label>
-                                </td>
-                            </tr>
-                        </form>
-                    </table>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" ng-click="close('Cancel')" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="button" ng-click="close('Submit')" class="btn btn-primary" data-dismiss="modal">Submit</button>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    </script>
                 </div>
             </div>
 

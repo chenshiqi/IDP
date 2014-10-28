@@ -1,15 +1,5 @@
 [
   {
-    "name":"2.1 Logitech Speakers",
-    "category": "Electronics",
-    "condition": 8,
-    "description": "Item is in great shape",
-    "price": 15,
-    "sellerId":"MonicaCheng@hotmail.com",
-    "imageURL": "./img/Items/Logitech Speakers 1.jpg",
-    "status": true
-  },
-  {
     "name":"Old Newspapers",
     "category": "Newspapers/Cardboards",
     "condition": 10,
@@ -17,7 +7,7 @@
     "price": 7,
     "sellerId": "MonicaCheng@hotmail.com",
     "imageURL": "./img/Items/newspaper.jpg",
-    "status": true
+    "status": false
   },
   { 
     "name": "Spoilt VCR",
@@ -27,7 +17,17 @@
     "price": 5,
     "sellerId": "uncleDesmond@conman.com",
     "imageURL": "./img/Items/vcr.jpg",
-    "status": false
+    "status": true
+  },
+    { 
+    "name": "Stack of maagzines",
+    "category": "Magazines",
+    "condition": 2,
+    "description": "Want to get rid an old stack of magazines",
+    "price": 2,
+    "sellerId": "uncleDesmond@conman.com",
+    "imageURL": "./img/Items/Stack-of-magazines.jpg",
+    "status": true
   },
     { 
     "name": "nokia 3330",
@@ -38,20 +38,5 @@
     "sellerId": "uncleDesmond@conman.com",
     "imageURL": "./img/Items/nokia3330.jpeg",
     "status": true
-  },
-  
-  
-  
-    { 
-    "name": "Stack of magazines",
-    "category": "Magazines",
-    "condition": 2,
-    "description": "Want to get rid an old stack of magazines",
-    "price": 2,
-    "sellerId": "uncleDesmond@conman.com",
-    "imageURL": "./img/Items/Stack-of-magazines.jpg",
-    "status": true
   }
 ] 
-    
-    

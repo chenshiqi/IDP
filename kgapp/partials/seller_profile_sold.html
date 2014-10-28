@@ -2,56 +2,20 @@
     #profile{
         padding-left: 60px;
     }
-    input[type='checkbox'] {
-        -webkit-appearance:none;
-        width:20px;
-        height:20px;
-        background:white;
-        border-radius:3px;
-        border:2px solid #555;
-    }
-    input[type='checkbox']:checked {
-        background: #abd;
-    }
+    
+
 </style>
 
 <h1>Seller's Page </h1>
-<div class="row" ng-controller="MonicaItemListCtrl">
+<div class="row" ng-controller="ItemListCtrl">
     <div class="col-md-6">
         <!--to do: show only monica's items-->
-        <div ng-repeat="item in items">
-            <div class="thumbnail">
-                <h3> <input type="checkbox" value="itemID">
-                <span class="label label-success" ng-hide="{{item.status}}">Available</span>
-                <span class="label label-warning" ng-show="{{item.status}}">Pending</span></h3>
-                <img ng-src="{{item.imageURL}}"/>
-                <table>
-                    <tr>
-                        {{item.name| uppercase}}
-                    </tr>
-                    <tr>
-                        <td>Category: </td>
-                        <td>{{item.category}}</td>
-                    </tr>
-                    <tr>
-                        <td>Condition: </td>
-                        <td>{{item.condition}}</td>
-                    </tr>
-                    <tr>
-                        <td>Price: </td>
-                        <td>{{item.price}}</td>
-                    </tr>
-                    <tr>
-                        <td>Description: </td>
-                        <td>{{item.description}}</td>
-                    </tr>
-                    <tr>
-                        <td>Seller: </td>
-                        <td>{{item.sellerId}}</td>
-                    </tr>
-                </table>
+        
+            <div class="col-md-10">
+                <h2>You have no items for sale!</h2>
+                <h3><a href="#/add-item">Click here to add more items.</a></h3>
             </div>
-        </div>
+      
 
 
     </div>

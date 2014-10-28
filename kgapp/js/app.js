@@ -52,13 +52,11 @@ function BasicController($scope, dataFactory) {
 
 
 //myApplication.controller('BasicController', BasicController);
-myApplication.controller('ItemListCtrl', ['$scope', '$rootScope', '$http',
-    function ($scope, $rootScope, $http) {
+myApplication.controller('ItemListCtrl', ['$scope', '$http',
+    function ($scope, $http) {
         $http.get('json/Item.json').success(function (data) {
             $scope.items = data;
         });
-        
-        console.log($rootScope.name);
     }]);
 
 myApplication.controller('ItemListCtrlNoSpeaker', ['$scope', '$http',

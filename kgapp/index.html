@@ -16,17 +16,16 @@
     </style>
   </head>
 
-  <body ng-controller="LoginCtrl">
+  <body ng-controller="MainController">
 
     <!-- Fixed navbar -->
     <!-- TODO: Show correct nav bar -->
-    <div ng-if="loggedOut == true && loggedIn == false"><div id="includedNavBar" ng-include="'./templates/nav.html'"></div></div>
-    <div ng-if="loggedIn == true"><div ng-include="'./templates/navSeller.html'"></div></div>
+    <div id="includedNavBar"></div>
     
     <div class="container">
-        
     <div ng-view></div>
-
+    
+    
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

@@ -1,3 +1,5 @@
+<!--add nav bar?-->
+
 <div ng-controller="ItemListCtrl">
     {{name}}
     <table>
@@ -48,6 +50,7 @@
         <div ng-repeat="item in items| filter:item_src | orderBy:orderProp | filter:type" class="col-sm-6 col-md-3">
             <div class="thumbnail">
                 <a href="#/buyer/viewProfile/monicacheng"><img ng-src="{{item.imageURL}}"/></a>
+
                 <br/>
                 <h3>{{item.name| uppercase}}</h3>
 

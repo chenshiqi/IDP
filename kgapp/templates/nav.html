@@ -11,12 +11,30 @@
           <a class="navbar-brand" href="./">KarungGuni App</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav">     
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#whatwedo">What We Do</a></li>
+            <span ng-if="userLoggedIn == true">
+            <li><a href="#/all_listings">All Listings</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">My Page <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/buyer/profile/onglyetat">View My Profile</a></li>
+                        <li><a href="#/buyer/onglyetat/myoffers">My Offers</a></li>
+                    </ul>
+             </li> 
+            </span>
+            <li><a href="#faq">FAQ</a></li>
             
-            <li><a href="#/welcome#aboutus">About Us</a></li>
-            <li><a href="#/welcome#whatwedo">What We Do</a></li>
-            <li><a href="#/welcome#faq">FAQ</a></li>
+            
+            
+            
+            
           </ul>
+            
+            
+            
+            
             <form class="navbar-form pull-right">
                 <a href="#/login" class="btn">Sign in</a>
                 <a href="#/register" class="btn">Register</a>

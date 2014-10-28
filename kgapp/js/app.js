@@ -66,7 +66,6 @@ myApplication.controller('ItemListCtrlNoSpeaker', ['$scope', '$http',
         });
     }]);
 
-
 myApplication.controller('MonicaItemListCtrl', ['$scope', '$http',
     function ($scope, $http) {
         $http.get('json/monica_Items.json').success(function (data) {
@@ -88,43 +87,21 @@ myApplication.controller('LoginCtrl', function ($scope, $http,$rootScope, $locat
         $scope.users = data;   
         var name;
         var pos;
-        $scope.loggedOut = true;
-        $scope.loggedIn = false;
-        
             $scope.login = function(){
                 for(var i = 0; i < data.length; i++){
                 if(data[i].email == $scope.email && data[i].password == $scope.password){
-                    var type = data[i].type;
-                    $scope.type = type;
-//                    if($scope.type == 'seller'){
-//                        //$("#includedNavBar").load("./templates/navSeller.html");
-//                        $scope.nav = "navSeller.html";
-//                    }else if($scope.type == 'buyer'){
-//                        //$("#includedNavBar").load("./templates/navBuyer.html");
-//                        $scope.nav = "navBuyer.html";
-//                    }else{
-//                        //$("#includedNavBar").load("./templates/nav.html");
-//                        $scope.nav = "nav.html";
-//
-//                    }
-                    $scope.userLoggedIn = true;
-                    $scope.loggedOut = false;
-                    $scope.loggedIn = true;
-                    console.log($scope.loggedIn);
-                    $scope.nav = function(){
-                        return "./templates/navSeller.html";
-                    };
+                    
+
                     name = data[i].name;
                     $rootScope.name = name;
                     $scope.name = name;
                     pos = i;
-                    
-                    
+                    var type = data[i].type;
+                    $scope.type = type;
                     console.log(name);
                     console.log($scope.type);
                     //window.location.href= "/kgapp/index_" + data[i].type+ ".html";
                     $location.path('/all_listings');
-
                     if($scope.type == 'seller'){
                         $("#includedNavBar").load("./templates/navSeller.html");
                     }else if($scope.type == 'buyer'){
@@ -138,24 +115,32 @@ myApplication.controller('LoginCtrl', function ($scope, $http,$rootScope, $locat
                     $scope.user = $scope.email;
                     console.log("what");
                     window.location.href = "/kgapp/index_" + data[i].type + ".html";
-
                 }
             }
 
         }
-        
+
+
             $scope.logout = function(){
                 $scope.type = '';
                 $("#includedNavBar").load("./templates/nav.html");
                 $location.path('index');
             }
-
+        console.log(pos);
+        console.log(name);
             
     }); **/
 
 });
 
 
+myApplication.controller('EditItemCtrl', ['$scope', '$http',
+    function ($scope, $http) {
+        $http.get('json/Item.json').success(function (data) {
+            $scope.items = data;
+        });
+
+    }]);
 
 myApplication.controller('AddItemCtrl', ['$scope', '$http',
     function ($scope, $http) {

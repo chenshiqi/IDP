@@ -1,14 +1,4 @@
 [
-  {
-    "name":"Old Newspapers",
-    "category": "Newspapers/Cardboards",
-    "condition": 10,
-    "description": "Straits Times, Newpaper from the past 3 months. Weight is close to 15kg",
-    "price": 7,
-    "sellerId": "MonicaCheng@hotmail.com",
-    "imageURL": "./img/Items/newspaper.jpg",
-    "status": false
-  },
   { 
     "name": "Spoilt VCR",
     "category": "Electronics",

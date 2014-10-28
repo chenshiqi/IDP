@@ -32,72 +32,79 @@
                 <i>or</i>
                 <input type="file" nv-file-select="" uploader="uploader" multiple  /><br/>
             </div>
-        <div ng-repeat="item in uploader.queue">
-            <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 200 }"></div>
-        </div>            
+            <div ng-repeat="item in uploader.queue">
+                <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 200 }"></div>
+            </div>            
         </div>
 
     </div>
 
     <!-- right side of the page -->
     <div class="col-md-7">
-        <form role="form">
-            <div class="form-group">
-                <label for="itemname" class="col-md-3" align="right">
-                    Item Name
-                </label>
-                <div class="col-md-8">
-                    <input type="text" class="form-control" id="itemName" placeholder="Enter Item Name">
-                    <p></p>
-                </div>
+        <form name="addItemform" ng-controller="AddItemCtrl" ng-submit="AddItemCtrl.addItem(item)">
+            <div class="col-md-3" align="right">
+                Item Name
+            </div>
+            <div class="col-md-8">
+                <fieldset class="form-group">
+                    <input ng-model="AddItemCtrl.item.name" type="text" class="form-control" placeholder="Enter Item Name" title="Item Name" />
+                </fieldset>
+            </div>
+
+            <div class="col-md-3" align="right">
+                Category
+            </div>
+            <div class="col-md-8">
+                <fieldset class="form-group">
+                    <select ng-model="AddItemCtrl.item.category" class="form-control" ng-options="category for category in ['Electronics', 'Clothings', 'Newspapers/Magazines', 'Furniture', 'Others']" title="Category">
+                        <option value>Category</option>
+                    </select>
+                </fieldset>
+            </div>
+
+            <div class="col-md-3" align="right">
+                Condition
+            </div>
+            <div class="col-md-8">
+                <fieldset class="form-group">
+                    <select ng-model="AddItemCtrl.item.condition" class="form-control" ng-options="condition for condition in [0,1,2,3,4,5,6,7,8,9,10]" title="Condition">
+                        <option value>Condition</option>
+                    </select>
+                </fieldset>
             </div>
 
             <div class="form-group">
-                <label for="category" class="col-md-3" align="right">
-                    Category
-                </label>
-                <div class="col-md-8">
-                    <input type="text" class="form-control" id="category" placeholder="Enter Category">
-                    <p></p>
+                <div class="col-md-3" align="right">
+                    Description
                 </div>
-            </div>  
-            <div class="form-group">
-                <label for="condition" class="col-md-3" align="right">
-                    Condition
-                </label>
                 <div class="col-md-8">
-                    <input type="number" min="0" max="10" class="form-control" id="condition" placeholder="Enter Condition">
-                    <p></p>
-                </div>
-            </div>                   
-            <div class="form-group">
-                <label for="details" class="col-md-3" align="right">
-                    Details
-                </label>
-                <div class="col-md-8">
-                    <textarea class="form-control" rows="3" id="details" placeholder="Enter Details"></textarea>
-                    <p></p>
+                    <fieldset class="form-group">
+                        <textarea ng-model="AddItemCtrl.item.description" class="form-control" placeholder="Write a short description of your item" title="details"></textarea>
+                    </fieldset>
                 </div>
             </div>             
 
             <div class="form-group">
-                <label for="price" class="col-md-3" align="right">
+                <div class="col-md-3" align="right">
                     Price
-                </label>
+                </div>
                 <div class="col-md-8">
                     <div class="input-group">
                         <span class="input-group-addon">$</span>
-                        <input type="number" min="0" step="0.01" class="form-control" id="price" placeholder="Enter price e.g 5.95">
-                        <p></p>
+                        <input ng-model="AddItemCtrl.item.price" type="number" min="0" step="0.01" class="form-control" placeholder="Enter Price" title="Price" />
                     </div>
                 </div>
                 <div class="col-md-3">
                     
                 </div>
                 <div class="col-md-8">
-                <br/><br/>
-                <a href="#/seller/profile/monicacheng"><button class="btn btn-primary btn-lg btn-block">Add Item</button></a><br/>
-                <a href="#/seller/profile/monicacheng"><button class="btn btn-default btn-lg btn-block">Cancel</button></a>
+                    <br/>
+                    <fieldset class="form-group">
+                        <a href="#/seller/profile/monicacheng"><input type="submit" class="btn btn-primary btn-lg btn-block" value="Add Item" /></a> <br/>
+                        <a href="#/seller/profile/monicacheng"><button class="btn btn-default btn-lg btn-block">Cancel</button></a>
+                    </fieldset>
+                    <br/><br/>
+                    <!-- <a href="#/seller/profile/monicacheng"><button class="btn btn-primary btn-lg btn-block">Add Item</button></a><br/>
                 </div>
             </div>
 

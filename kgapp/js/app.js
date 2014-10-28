@@ -8,7 +8,7 @@ myApplication.config(function ($routeProvider) {
     $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: ''});
     $routeProvider.when('/register/seller', {templateUrl: 'partials/register_seller.html', controller: ''});
     $routeProvider.when('/register/buyer', {templateUrl: 'partials/register_buyer.html', controller: ''});
-    $routeProvider.when('/add-item', {templateUrl: 'partials/add_item.html', controller: ''}); //to add controller for addItem
+    $routeProvider.when('/add-item', {templateUrl: 'partials/add_item.html', controller: 'AddItemCtrl'}); //to add controller for addItem
     $routeProvider.when('/edit-item', {templateUrl: 'partials/edit_item.html', controller: 'EditItemCtrl'}); //route according to item ID
     $routeProvider.when('/faq', {templateUrl: 'partials/faq.html', controller: ''});
     $routeProvider.when('/seller/profile/monicacheng', {templateUrl: 'partials/seller_profile.html'});
@@ -142,6 +142,19 @@ myApplication.controller('EditItemCtrl', ['$scope', '$http',
 
     }]);
 
+myApplication.controller('AddItemCtrl', ['$scope', '$http',
+    function ($scope, $http) {
+        $http.get('json/monica_Items.json').success(function (data) {
+            $scope.items = data;
+        });
+        
+        $scope.addItem = function(item){
+          this.item.imageURL = "./img/Items/Logitech Speakers 1.jpg";
+          $scope.items.push(this.item);
+        };
+        
+    }]);
+
 myApplication.controller('SellerUserCtrl', ['$scope', '$http',
     function ($scope, $http) {
         $http.get('json/Seller.json').success(function (data) {
@@ -217,6 +230,7 @@ myApplication.controller('ModalCloseCtrl', function ($scope, close) {
 
     $scope.close = function (result) {
         close(result, 500); // close, but give 500ms for bootstrap to animate
+        window.location.href= result; 
     };
 
 

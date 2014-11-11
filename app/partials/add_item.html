@@ -1,0 +1,114 @@
+<style>
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #eee;
+    }
+    row{
+        padding-top: 40px;
+    }
+    table { table-layout: fixed; }
+    td { width: 33%; }
+
+    .my-drop-zone { border: dotted 3px lightgray; }
+    .nv-file-over { border: dotted 3px green; } /* Default class applied to drop zones on over */
+    .another-file-over-class { border: dotted 3px green; }
+
+    html, body { height: 100%; }
+
+</style>
+
+
+<h1>Add Item</h1>
+<div class="row" ng-controller="UploadController" nv-file-drop="" uploader="uploader">
+    <!-- left side of the page -->
+    <div class="col-md-4">
+        <h3>Upload Images</h3>
+
+        <div ng-show="uploader.isHTML5">
+            <!-- 3. nv-file-over uploader="link" over-class="className" -->
+            <div class="well my-drop-zone" nv-file-over="" uploader="uploader">
+                Drag file here<br/>
+                <i>or</i>
+                <input type="file" nv-file-select="" uploader="uploader" multiple  /><br/>
+            </div>
+            <div ng-repeat="item in uploader.queue">
+                <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 200 }"></div>
+            </div>            
+        </div>
+
+    </div>
+
+    <!-- right side of the page -->
+    <div class="col-md-7">
+        <form name="addItemform" ng-controller="AddItemCtrl" ng-submit="AddItemCtrl.addItem(item)">
+            <div class="col-md-3" align="right">
+                Item Name
+            </div>
+            <div class="col-md-8">
+                <fieldset class="form-group">
+                    <input ng-model="AddItemCtrl.item.name" type="text" class="form-control" placeholder="Enter Item Name" title="Item Name" />
+                </fieldset>
+            </div>
+
+            <div class="col-md-3" align="right">
+                Category
+            </div>
+            <div class="col-md-8">
+                <fieldset class="form-group">
+                    <select ng-model="AddItemCtrl.item.category" class="form-control" ng-options="category for category in ['Electronics', 'Clothings', 'Newspapers/Magazines', 'Furniture', 'Others']" title="Category">
+                        <option value>Category</option>
+                    </select>
+                </fieldset>
+            </div>
+
+            <div class="col-md-3" align="right">
+                Condition
+            </div>
+            <div class="col-md-8">
+                <fieldset class="form-group">
+                    <select ng-model="AddItemCtrl.item.condition" class="form-control" ng-options="condition for condition in [0,1,2,3,4,5,6,7,8,9,10]" title="Condition">
+                        <option value>Condition</option>
+                    </select>
+                </fieldset>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-3" align="right">
+                    Description
+                </div>
+                <div class="col-md-8">
+                    <fieldset class="form-group">
+                        <textarea ng-model="AddItemCtrl.item.description" class="form-control" placeholder="Write a short description of your item" title="details"></textarea>
+                    </fieldset>
+                </div>
+            </div>             
+
+            <div class="form-group">
+                <div class="col-md-3" align="right">
+                    Price
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input ng-model="AddItemCtrl.item.price" type="number" min="0" step="0.01" class="form-control" placeholder="Enter Price" title="Price" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    
+                </div>
+                <div class="col-md-8">
+                    <br/>
+                    <fieldset class="form-group">
+                        <a href="#/seller/profile/monicacheng"><input type="submit" class="btn btn-primary btn-lg btn-block" value="Add Item" /></a> <br/>
+                        <a href="#/seller/profile/monicacheng"><button class="btn btn-default btn-lg btn-block">Cancel</button></a>
+                    </fieldset>
+                    <br/><br/>
+                    <!-- <a href="#/seller/profile/monicacheng"><button class="btn btn-primary btn-lg btn-block">Add Item</button></a><br/>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>

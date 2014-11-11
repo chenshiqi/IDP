@@ -1,0 +1,57 @@
+[
+  {
+    "name":"2.1 Logitech Speakers",
+    "category": "Electronics",
+    "condition": 8,
+    "description": "Item is in great shape",
+    "price": 15,
+    "sellerId":"MonicaCheng@hotmail.com",
+    "imageURL": "./img/Items/Logitech Speakers 1.jpg",
+    "status": true
+  },
+  {
+    "name":"Old Newspapers",
+    "category": "Newspapers/Cardboards",
+    "condition": 10,
+    "description": "Straits Times, Newpaper from the past 3 months. Weight is close to 15kg",
+    "price": 7,
+    "sellerId": "MonicaCheng@hotmail.com",
+    "imageURL": "./img/Items/newspaper.jpg",
+    "status": true
+  },
+  { 
+    "name": "Spoilt VCR",
+    "category": "Electronics",
+    "condition": 2,
+    "description": "VCR is over 10 years old & is no longer usable. However, parts are still intact.",
+    "price": 5,
+    "sellerId": "uncleDesmond@conman.com",
+    "imageURL": "./img/Items/vcr.jpg",
+    "status": false
+  },
+    { 
+    "name": "nokia 3330",
+    "category": "Electronics",
+    "condition": 5,
+    "description": "Nokia phone is still functioning and is in good condition.",
+    "price": 10,
+    "sellerId": "uncleDesmond@conman.com",
+    "imageURL": "./img/Items/nokia3330.jpeg",
+    "status": true
+  },
+  
+  
+  
+    { 
+    "name": "Stack of magazines",
+    "category": "Magazines",
+    "condition": 2,
+    "description": "Want to get rid an old stack of magazines",
+    "price": 2,
+    "sellerId": "uncleDesmond@conman.com",
+    "imageURL": "./img/Items/Stack-of-magazines.jpg",
+    "status": true
+  }
+] 
+    
+    

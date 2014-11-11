@@ -26,7 +26,7 @@
                 <a href="#/register" class="btn">Register</a>
                 </div>
                 <div ng-show="loggedIn" >
-                    Welcome, <a href="#/seller/profile/monicacheng">{{name}}</a>!
+                    Welcome, <a href="#/profile/{{type}}">{{name}}</a>!
                     <a class="dropdown-toggle" data-toggle="dropdown">
                         <button type="button" class="btn btn-default btn-md">
                             <span class="glyphicon glyphicon-bell"></span>
@@ -90,6 +90,8 @@
     </table>
     <br/>
     <!--to hyperlink each item to respective seller-->
+    {{name}}
+    {{items}}
     <div class="container-fluid">        
         <div class="row">
         <div  class="col-sm-6 col-md-3" ng-repeat="item in items| filter:item_src | orderBy:orderProp | filter:type">

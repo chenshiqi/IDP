@@ -1,3 +1,49 @@
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation"ng-controller="MainController">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#/welcome">KG App</a>
+        </div>
+          
+          <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav" ng-repeat="tab in tabs">             
+                  <li><a href="{{tab.link}}">{{tab.name}}</a></li>
+                  
+          </ul>
+
+           log in? {{loggedIn}}
+            <form class="navbar-form pull-right">
+                <!---<div ng-show="'{{type}}' != 'seller'  ||'{{type}}' != 'buyer' " > -->
+                <div ng-hide="loggedIn" >
+                <a href="#/login" class="btn">Sign in</a>
+                <a href="#/register" class="btn">Register</a>
+                </div>
+                <div ng-show="loggedIn" >
+                    Welcome, <a href="#/profile/{{type}}">{{name}}</a>!
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-default btn-md">
+                            <span class="glyphicon glyphicon-bell"></span>
+                        </button>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Notifications</li>
+                        <li class="divider"></li>
+                        <li><a href="#/leave-feedback"><span class="badge">11:17AM | 23/10/2014</span><br> Transaction Complete!<br> Leave a feedback for Ong Lye Tat!</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#/seller/monicacheng/myoffers"><span class="badge">9:30AM 22/10/2014</span><br> Ong Lye Tat sent you an offer!<br>Check My Offers page for details</a></li>
+                        <li class="divider"></li>
+                    </ul>
+                    <button class="btn btn-primary" type="submit" ng-click="logout()" >Log Out</button>
+                </div>
+            </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 <div>
     <h2>page in construction</h2>
 </div>

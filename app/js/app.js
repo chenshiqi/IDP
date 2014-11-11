@@ -4,14 +4,22 @@ myApplication.config(function ($routeProvider) {
     
     $routeProvider.when('/welcome', {templateUrl: 'partials/welcome.html'});
     $routeProvider.when('/all_listings', {templateUrl: 'partials/all_listings.html'});
-    //$routeProvider.when('/all_listings2', {templateUrl: 'partials/all_listings_NoSpeaker.html', controller: 'ItemListCtrlNoSpeaker'});
     $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'LoginCtrl'});
     $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: ''});
+    $routeProvider.when('/profile/seller',{templateUrl:'partials/seller_profile.html'});
+    $routeProvider.when('/profile/buyer',{templateUrl:'partials/buyer_profile.html'});
+    $routeProvider.when('/add-item', {templateUrl: 'partials/add_item.html', controller: 'AddItemCtrl'}); //to add controller for addItem    
+    $routeProvider.when('/faq', {templateUrl: 'partials/faq.html'});
+    $routeProvider.when('/offers/seller', {templateUrl:'partials/offer_seller.html'});
+    $routeProvider.when('/offers/buyer', {templateUrl:'partials/offer_buyer.html'});
+    
+    
+    //random links below
     $routeProvider.when('/register/seller', {templateUrl: 'partials/register_seller.html', controller: ''});
     $routeProvider.when('/register/buyer', {templateUrl: 'partials/register_buyer.html', controller: ''});
-    $routeProvider.when('/add-item', {templateUrl: 'partials/add_item.html', controller: 'AddItemCtrl'}); //to add controller for addItem
+
     $routeProvider.when('/edit-item', {templateUrl: 'partials/edit_item.html', controller: 'EditItemCtrl'}); //route according to item ID
-    $routeProvider.when('/faq', {templateUrl: 'partials/faq.html', controller: ''});
+
     $routeProvider.when('/seller/profile/monicacheng', {templateUrl: 'partials/seller_profile.html'});
     $routeProvider.when('/seller/profile/monicacheng1', {templateUrl: 'partials/seller_profile_Pending.html'});
     $routeProvider.when('/seller/profile/monicacheng2', {templateUrl: 'partials/seller_profile_sold.html'});
@@ -67,10 +75,6 @@ function BasicController($scope, dataFactory) {
      }else{
          $scope.loggedIn = false;
      }     
-
-    
-    $scope.items = NavService.items;
-     console.log("All the items" + $scope.items);
              
    $scope.logout = function(){
        $scope.loggedIn = false;
@@ -81,45 +85,48 @@ function BasicController($scope, dataFactory) {
    }
 }]);
 
-myApplication.controller('ItemListCtrl', ['$scope', '$http', '$rootScope', '$window', '$location', 
-    function ($scope, $http, $rootScope, $window, $location) {
+myApplication.controller('ItemListCtrl', ['$scope', '$http', '$rootScope', '$window', '$location', 'NavService',
+    function ($scope, $http, $rootScope, $window, $location, NavService) {
         $scope.name =  $window.sessionStorage.name;
-        //$scope.items = $window.sessionStorage.items;
+
         console.log("All list, Name: " + $scope.name);
         console.log("All List, current user: " + $window.sessionStorage.name);
         console.log("All List, current type: " + $window.sessionStorage.type);
-        console.log($window.sessionStorage);
-        $scope.items = $window.sessionStorage.items;
-//        $rootScope.$on('dataready', function(){
-//                    console.log($scope.items);
-//
-//        })
+        $scope.items = NavService.factory.getlist();
         
-//        $http.get('json/Item.json')
-//                .success(function (data) {
-//                    $scope.items = data;
-//                    $window.sessionStorage.items = data;
-//                });
-
+        NavService.factory.getlist().then(function(data){
+            $scope.items = data;
+        });
+        console.log($scope.items);
     }]);
 
-myApplication.factory('NavService', function($http, $window){
+
     
+myApplication.factory('NavService', function($http, $window, $q){
     var mainTabs = [{name: 'About Us', link:'#/welcome/#aboutus'},{name: 'What We Do', link:'#/welcome#whatwedo'}, {name: 'FAQ', link:'#/welcome#faq'} ];
-    var sellerTabs = [{name: 'All Listings', link:'#/all_listings'}, {name: 'View Profile', link:'#/seller/profile'}, {name: 'Add Item', link:'#/add-item'} , {name: 'My Offers', link:'#/seller/offers'}, {name:'FAQ', link:'#/faq'}];
-    var buyerTabs = [{name: 'KG App', link:'#/welcome'},{name: 'All Listings', link:'#/all_listings'}, {name: 'View Profile', link:'#/seller/profile'}, {name: 'My Offers', link:'#/seller/offers'}, {name:'FAQ', link:'#/faq'}];
-    var items =[];        
-    
-    $http.get('json/Item.json')
-        .success(function (data) {
-            $window.sessionStorage.items = data;
+    var sellerTabs = [{name: 'All Listings', link:'#/all_listings'}, {name: 'View Profile', link:'#profile/seller'}, {name: 'Add Item', link:'#/add-item'} , {name: 'My Offers', link:'#/offers/seller'}, {name:'FAQ', link:'#/faq'}];
+    var buyerTabs = [{name: 'All Listings', link:'#/all_listings'}, {name: 'View Profile', link:'#profile/buyer'}, {name: 'My Offers', link:'#/offers/buyer'}, {name:'FAQ', link:'#/faq'}];
+    var factory = {};
+    factory.getlist = function(){
+        var deferred = $q.defer();  //init promise
+       $http({method: 'GET', url: './json/Item.json'}).
+        success(function(data, status, headers, config) {
+            console.log(data); //I get the correct items, all seems ok here
+            deferred.resolve(data.itemsToReturn);
+        }).
+        error(function(data, status, headers, config) {
+            deferred.reject();
         });
+        return deferred.promise;
+    }
+
+    
     return {
         mainTabs: mainTabs,
         sellerTabs: sellerTabs,
         buyerTabs: buyerTabs,
-        items: items
-    };
+        factory: factory
+        }
 
     
 });

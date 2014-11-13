@@ -42,6 +42,19 @@ myApplication.factory('dataFactory', function () {
     return objFactory;
 });
 
+myApplication.factory('newDataFactory', function () {
+    var items = [];
+    var objFactory = {};
+    objFactory.getItems = function () {
+        return items;
+    };
+    objFactory.pushItem = function (item) {
+        item.timestamp = Math.round(new Date().getTime() / 1000.0);
+        items.push(item);
+    };
+    return objFactory;
+});
+
 function BasicController($scope, dataFactory) {
     $scope.items = dataFactory.getItems();
     $scope.addItem = function () {
@@ -142,14 +155,17 @@ myApplication.controller('EditItemCtrl', ['$scope', '$http',
 
     }]);
 
-myApplication.controller('AddItemCtrl', ['$scope', '$http',
-    function ($scope, $http) {
+myApplication.controller('AddItemCtrl', ['$scope', '$http', 'newDataFactory',
+    function ($scope, $http, newDataFactory) {
         $http.get('json/monica_Items.json').success(function (data) {
             $scope.items = data;
         });
         
+   
         $scope.addItem = function(item){
           this.item.imageURL = "./img/Items/Logitech Speakers 1.jpg";
+          newDataFactory.objFactory.pushItem(item);
+          console.log(objFactory.getItems());
           $scope.items.push(this.item);
         };
         
@@ -210,21 +226,7 @@ myApplication.controller('ModalServiceCtrl', function ($scope, ModalService) {
 
 });
 
-myApplication.controller('ModalServiceFeedbackCtrl', function ($scope, ModalService) {
 
-    $scope.show = function () {
-        ModalService.showModal({
-            templateUrl: 'feedback.html',
-            controller: "ModalCloseCtrl"
-        }).then(function (modal) {
-            modal.element.modal();
-            modal.close.then(function (result) {
-                $scope.message = "You said " + result;
-            });
-        });
-    };
-
-});
 
 myApplication.controller('ModalCloseCtrl', function ($scope, close) {
 

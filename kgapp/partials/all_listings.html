@@ -1,3 +1,9 @@
+<style>
+        body{
+            font-size: 180%;
+        }
+    </style>
+
 <div ng-controller="ItemListCtrl">
     {{name}}
     <table>
@@ -49,7 +55,7 @@
             <div class="thumbnail">
                 <a href="#/buyer/viewProfile/monicacheng"><img ng-src="{{item.imageURL}}"/></a>
                 <br/>
-                <h3>{{item.name| uppercase}}</h3>
+                <h3><b>{{item.name| uppercase}}</b></h3>
 
                 Category: {{item.category}} 
                 <br/>

@@ -46,8 +46,8 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
+<h2>All Listings</h2>
 <div ng-controller="ItemListCtrl">
-    <div id="mainView"></div>
     <table>
         <tr><h5>List of Items</h5></tr>
         <tr>
@@ -90,13 +90,11 @@
     </table>
     <br/>
     <!--to hyperlink each item to respective seller-->
-    {{name}}
-    {{items}}
     <div class="container-fluid">        
         <div class="row">
-        <div  class="col-sm-6 col-md-3" ng-repeat="item in items| filter:item_src | orderBy:orderProp | filter:type">
+        <div  class="col-sm-6 col-md-3" ng-repeat="item in items| filter:item_src | orderBy:orderProp | filter:item.type">
             <div class="thumbnail">
-                <a href="#/buyer/viewProfile/monicacheng"><img ng-src="{{item.imageURL}}"/></a>
+                <a href="#/profile/seller"><img ng-src="{{item.imageURL}}"/></a>
                 <br/>
                 <h3>{{item.name| uppercase}}</h3>
 

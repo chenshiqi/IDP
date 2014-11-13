@@ -96,6 +96,9 @@ myApplication.controller('ItemListCtrl', ['$scope', '$http', '$rootScope', '$win
         
         NavService.factory.getlist().then(function(data){
             $scope.items = data;
+            console.log("after promise data ");
+            console.log(data);
+            console.log("after promise "  + $scope.items);
         });
         console.log($scope.items);
     }]);
@@ -109,10 +112,10 @@ myApplication.factory('NavService', function($http, $window, $q){
     var factory = {};
     factory.getlist = function(){
         var deferred = $q.defer();  //init promise
-       $http({method: 'GET', url: './json/Item.json'}).
+       $http.get('json/Item.json').
         success(function(data, status, headers, config) {
             console.log(data); //I get the correct items, all seems ok here
-            deferred.resolve(data.itemsToReturn);
+            deferred.resolve(data);
         }).
         error(function(data, status, headers, config) {
             deferred.reject();
@@ -129,15 +132,6 @@ myApplication.factory('NavService', function($http, $window, $q){
         }
 
     
-});
-
-myApplication.controller('LogoutCtrl', function($scope, $window, sessionStorage, $location){
-            
-               $scope.logout = function(){
-                console.log("logout success");
-                $window.sessionStorage.clear();
-                $location.path('/welcome');
-           }
 });
 
 myApplication.controller('LoginCtrl', ['$rootScope', '$scope','$http', '$location', 'NavService', '$window', function ($rootScope,$scope, $http, $location, NavService, $window) {
@@ -161,9 +155,10 @@ myApplication.controller('LoginCtrl', ['$rootScope', '$scope','$http', '$locatio
 
                     $window.sessionStorage.name = name;
                     $window.sessionStorage.type = data[i].type;
+                    $window.sessionStorage.email = data[i].email;
                     console.log("Just logged in, Name: " + $window.sessionStorage.name);
                     console.log("Just logged in, Type: " + $window.sessionStorage.type); 
-              
+                    console.log("Just logged in, Email: " + $window.sessionStorage.email); 
                     pos = i;
                     var type = data[i].type;
                     $scope.type = type;
@@ -176,25 +171,11 @@ myApplication.controller('LoginCtrl', ['$rootScope', '$scope','$http', '$locatio
                     console.log($scope.tabs);
                     $location.path('/all_listings');
                 }
-
             }
-               
-
         }
         $scope.login = login;
 
-    }); 
-                $scope.logout = function(){
-
-                console.log("logout success");
-                
-                //$window.sessionStorage.type = null;
-                //$window.sessionStorage.name = null;
-                $window.sessionStorage.clear();
-                //$("#includedNavBar").load("./templates/nav.html");
-                $location.path('/welcome');
-            }
-        
+    });         
 }]);
 
 

@@ -1,0 +1,184 @@
+<!doctype html>
+<html ng-app="">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+    
+  </head>
+
+  <body ng-controller="itemCtrl">
+      <div>
+      <label>Name</label>
+      <input type="text" id="name" ng-model="name"><br/>
+      <label>Category</label>
+      <input type="text" id="category" ng-model="category"><br/>
+      <label>Condition</label>
+      <input type="text" id="condition" ng-model="condition"><br/>
+      <label>Description</label>
+      <input type="text" id="description" ng-model="description"><br/>
+      <label>Price</label>
+      <input type="text" id="price" ng-model="price"><br/>
+      <label>Status</label>
+      <input type="text" id="status" ng-model="status"><br/>
+      </div>
+      
+      <div>
+          <button ng-click="addItem()">Add Item</button>
+      </div>
+      
+      </br>
+      <label>Retrieve a Particular Item</label>
+      <input type="text" id="getName" ng-model="getName">
+      </div>
+      
+      <div>
+          <button ng-click="retrieveItem()">Retrieve Item</button> 
+      </div>      
+      <div>
+          <table class="table table-bordered">
+          
+          <thead>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Condition</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Status</th>            
+          </thead>
+          
+          <tbody>
+              <tr>
+                  <td>{{getName}}</td>
+                  <td>{{getCategory}}</td>
+                  <td>{{getCondition}}</td>
+                  <td>{{getDescription}}</td>
+                  <td>{{returnPrice}}</td>
+                  <td>{{getStatus}}</td>
+              </tr>                  
+          </tbody>
+      </table>
+      </div>
+      
+      
+      <div>
+           <label>Edit Item Status (Item Above)</label>
+           <input type="text" id="newStatus" ng-model="newStatus">
+      </div>
+      
+      <div>
+          <button ng-click="updateStatus()">Update Status</button> 
+      </div>      
+      <div>
+      
+      
+      
+      <h2>All Items</h1>
+      <table class="table table-bordered">
+          
+          <thead>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Condition</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Status</th>            
+          </thead>
+          
+          <tbody ng-repeat="item in items">
+              <tr>
+                  <td>{{item.name}}</td>
+                  <td>{{item.category}}</td>
+                  <td>{{item.condition}}</td>
+                  <td>{{item.description}}</td>
+                  <td>{{item.price}}</td>
+                  <td>{{item.status}}</td>
+              </tr>                  
+          </tbody>
+      </table>
+      
+    <script>
+         function itemCtrl($scope)  {
+            
+            $scope.myData = new Firebase("https://blinding-heat-6498.firebaseio.com/items");
+            
+            $scope.name ="";
+            $scope.category ="";
+            $scope.condition =0;
+            $scope.description ="";
+            $scope.price = 0;
+            $scope.status ="";
+            
+            // Used for retrieving a single item
+            $scope.getName= "";
+            $scope.returnPrice =0;
+            $scope.getCategory ="";
+            $scope.getStatus ="";
+            $scope.getDescription ="";
+            $scope.getCondition = 0;
+            
+            
+            //adding of new item
+            $scope.addItem = function() {
+                //console.log($scope.category);
+                $scope.myData.push({name: $scope.name,
+                category: $scope.category,
+                condition: $scope.condition,
+                description: $scope.description,
+                price: $scope.price,
+                status: $scope.status });
+                
+            }
+            //retrieving of all items
+            $scope.myData.on('value', function(snapshot) {
+                $scope.items = snapshot.val(); 
+                $scope.$apply();
+                 for (var i=0; i<$scope.items.length;i++) {                    
+                    console.log($scope.items[i]);
+                 }                
+
+            });
+            
+            $scope.retrieveItem = function() {    
+                for (var i=0; i<$scope.items.length;i++) {                    
+                    console.log("Check");
+                  if($scope.items[i].name===$scope.getName) {                     
+                                               
+                    var itemRequired = $scope.items[i];
+                    $scope.returnPrice = $scope.items[i].price;
+                    $scope.getName= $scope.items[i].name;                    
+                    $scope.getCategory =$scope.items[i].Category;
+                    $scope.getStatus =$scope.items[i].status;
+                    $scope.getDescription =$scope.items[i].description;
+                    $scope.getCondition = $scope.items[i].condition;
+                    
+                    
+                  }
+                }
+            }
+            
+            //
+            //i still cant fuckin update status (edit one particular object's "status" value
+            $scope.updateStatus = function() {     
+                var list = $firebase($scope.myData).$asArray();
+                
+                
+                for (var i=0; i<list.length;i++) {                    
+                  if(list[i].name===$scope.getName) { 
+                    var item = list[i];
+                    console.log(item);
+                    list.$remove(item).then(function(ref) {
+                    ref.name() === item.$id; // true
+                    });
+                    console.log("HERE!");
+                    console.log($scope.myData[2]);
+                    //$scope.myData[i].status = false;
+                    //$scope.myData.$save(i).then(onComplete);
+                    //$scope.myData.update({ 3: { status: false}});
+                  }
+                }
+            }
+        }
+    </script>
+  </body>
+</html>

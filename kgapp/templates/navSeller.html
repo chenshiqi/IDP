@@ -1,0 +1,53 @@
+<!-- Fixed navbar -->
+<body ng-app>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="LoginCtrl">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/all_listings">KarungGuni App</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#/all_listings2">All Listings</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">My Page <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/seller/profile/monicacheng">View My Profile</a></li>
+                        <li><a href="#/add-item">Add Item</a></li>
+                        <li><a href="#/seller/monicacheng/myoffers">My Offers</a></li>
+                    </ul>
+                </li> 
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+
+            <div class="navbar-form pull-right" >
+                
+                <div class="dropdown">
+                    Welcome, <a href="#/seller/profile/monicacheng">Monica Cheng</a>!
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-default btn-md">
+                            <span class="glyphicon glyphicon-bell"></span>
+                        </button>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Notifications</li>
+                        <li class="divider"></li>
+                        <li><a href="#/leave-feedback"><span class="badge">11:17AM  23/10/2014</span><br> Transaction Complete!<br> Leave a feedback for Ong Lye Tat!</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#/seller/monicacheng/myoffers"><span class="badge">9:30AM 22/10/2014</span><br> Ong Lye Tat sent you an offer!<br>Check My Offers page for details</a></li>
+                        <li class="divider"></li>
+                    </ul>
+                    <a href="index.html" class="btn btn-primary">Log Out</a>
+                </div>
+                
+            </div>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+    
+</body>

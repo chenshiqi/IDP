@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApplication">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>KG: Home</title>
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+
+    <style>
+        body{
+            //padding-top: 60px;
+            height: 2000px;
+        }
+    </style>
+  </head>
+
+  <body ng-controller='MainController'>
+
+    <div ng-view id='mainView'></div>
+
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>   
+        <script type="text/javascript" src="./js/libs/angular.js/angular.js"></script>
+        <script type="text/javascript" src="./js/libs/angular.js/angular-route.js"></script>
+        <script type="text/javascript" src="./js/libs/angular.js/angular-modal-service.js"></script>
+        <script type="text/javascript" src="./js/libs/angular.js/angular-file-upload.js"></script>
+            <!-- Firebase -->
+        <script type="text/javascript" src="./js/app.js"></script> 
+        <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+        <script src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
+
+
+  </body>
+</html>

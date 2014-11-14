@@ -1,0 +1,140 @@
+<style>
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #eee;
+    }
+
+    table { table-layout: fixed; }
+    td { width: 33%; }
+</style>
+
+<h1>Registration</h1>
+<p class="lead">You are registering as a <strong>buyer</strong></p>
+<div class="row">
+    <div class="col-md-8">
+        <form role="form">
+            <div class="form-group">
+                <label for="fullname" class="col-md-3" align="right">
+                    Full Name:
+                </label>
+                <div class="col-md-8">
+                    <input ng-model="register.userbuyer.name" type="text" class="form-control" id="fullname" placeholder="Enter Full Name">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="emailaddress" class="col-md-3" align="right">
+                    Email:
+                </label>
+                <div class="col-md-8">
+                    <input ng-model="register.userbuyer.email" type="email" class="form-control" id="emailaddress" placeholder="Enter email address">
+                    <p class="help-block">
+                        Example: yourname@domain.com
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="col-md-3" align="right">
+                    Password:
+                </label>
+                <div class="col-md-8">
+                    <input ng-model="register.userbuyer.password" type="password" class="form-control" id="password" placeholder="Enter Password">
+                    <p class="help-block">
+                        Min: 6 characters (Alphanumeric only)
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-8">
+                    <input type="password" class="form-control" id="repassword" placeholder="Re-enter Password">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address" class="col-md-3" align="right">
+                    Address:
+                </label>
+                <div class="col-md-8">
+                    <input ng-model="register.userbuyer.address" type="text" class="form-control" id="roadName" placeholder="Enter Address">
+                </div>
+            </div>  
+
+            <div class="form-group">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-8">
+                    <input ng-model="register.userbuyer.postalcode" type="text" class="form-control" id="postalCode" placeholder="Enter Postal Code">
+                    <p></p>
+                </div>
+            </div>  
+
+            <div class="form-group">
+                <label for="contact" class="col-md-3" align="right">
+                    Contact:
+                </label>
+                <div class="col-md-8">
+                    <input ng-model="register.userbuyer.contact" type="text" class="form-control" id="contact" placeholder="Enter Contact No.">
+                </div>
+            </div>
+
+            <br><br>
+            <div class="form-group">
+                <label for="sex" class="col-md-3" align="right">
+                    <br>
+                    Gender:
+                </label>
+                <div class="col-md-8">
+                    <label class="radio" class="col-md-4">
+                        <input ng-model="register.userbuyer.gender" type="radio" name="sex" id="sex" value="male">
+                        Male
+                    </label>
+                    <label class="radio" class="col-md-4">
+                        <input ng-model="register.userbuyer.gender" type="radio" name="sex" id="sex" value="female">
+                        Female
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="uploadimage" class="col-md-3" align="right">
+                    Upload Image:
+                </label>
+                <div class="col-md-8">
+                    <input ng-model="register.userbuyer.profilepic" type="file" name="uploadimage" id="uploadimage">
+                    <p class="help-block">
+                        Allowed formats: jpeg, jpg, gif, png
+                    </p>
+                </div>
+            </div>
+
+            <div class="checkbox">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-8">
+                    <label>
+                        <input ng-model="register.userbuyer.tnc" type="checkbox" value="true">Terms and Conditions</label>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-info">
+                        Register
+                    </button>
+                </div>
+            </div>
+
+    </div>
+</form>
+</div>

@@ -1,0 +1,116 @@
+<style>
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    row{
+        padding-top: 40px;
+    }
+    table { table-layout: fixed; }
+    td { width: 33%; }
+    
+    #items{
+        padding-top: 20px;
+    }
+</style>
+
+<div ng-controller="EditItemCtrl as editItem">
+    <h1>Edit Item</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="col-md-2">
+                
+            </div>
+            <div class="col-md-4" id="items">
+            <img ng-src="{{items[0].imageURL}}"/>
+            <img src="./img/add_button.jpg" width="50" height="50"/>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <form role="form">
+                <!--TODO: Fill forms with existing data-->
+                <div class="form-group">
+                    <label for="status" class="col-md-3" align="right">
+                        <br>
+                        Status
+                    </label>
+                    <div class="col-md-8">
+                        <label class="radio" class="col-md-4">
+                            <input type="radio" name="status" id="status" value="Available">
+                            Available
+                        </label>
+                        <label class="radio" class="col-md-4">
+                            <input type="radio" name="status" id="status" value="Pending">
+                            Pending
+                        </label>
+                        <label class="radio" class="col-md-4">
+                            <input type="radio" name="status" id="status" value="Pending">
+                            Sold
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="itemname" class="col-md-3" align="right">
+                        Item Name
+                    </label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="itemName" placeholder="{{items[0].name}}">
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="category" class="col-md-3" align="right">
+                        Category
+                    </label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="category" placeholder="{{items[0].category}}">
+                        <p></p>
+                    </div>
+                </div>  
+                <div class="form-group">
+                    <label for="condition" class="col-md-3" align="right">
+                        Condition
+                    </label>
+                    <div class="col-md-8">
+                        <input type="number" min="0" max="10" class="form-control" id="condition" placeholder="{{items[0].condition}}">
+                        <p></p>
+                    </div>
+                </div>                   
+                <div class="form-group">
+                    <label for="details" class="col-md-3" align="right">
+                        Details
+                    </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" rows="3" id="details" placeholder="{{items[0].description}}"></textarea>
+                        <p></p>
+                    </div>
+                </div>             
+
+                <div class="form-group">
+                    <label for="price" class="col-md-3" align="right">
+                        Price
+                    </label>
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input type="number" min="0" step="0.01" class="form-control" id="price" placeholder="{{items[0].price}}">
+                            <p></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+                    
+                </div>
+                <div class="col-md-8">
+                <br/><br/>
+                <a href="#/seller/profile/monicacheng2"><button class="btn btn-primary btn-lg btn-block">Edit Item</button></a><br/>
+                <a href="#/seller/profile/monicacheng"><button class="btn btn-default btn-lg btn-block">Cancel</button></a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

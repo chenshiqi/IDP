@@ -1,0 +1,75 @@
+<style>
+    #profile{
+        padding-left: 60px;
+    }
+    
+
+</style>
+
+<h1>Seller's Page </h1>
+<div class="row" ng-controller="ItemListCtrl">
+    <div class="col-md-6">
+        <!--to do: show only monica's items-->
+        
+            <div class="col-md-10">
+                <h2>You have no items for sale!</h2>
+                <h3><a href="#/add-item">Click here to add more items.</a></h3>
+            </div>
+      
+
+
+    </div>
+
+    <div class="col-md-6" ng-controller="SellerUserCtrl as seller" id="profile">
+        <table class="table">
+            <tr align="center">
+            <img ng-src="{{seller[0].profileImage}}" height="100" width="100"/><br><br>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td>{{seller[0].email}}</td>
+            </tr>
+            <tr>
+                <td>Name: </td>
+                <td>{{seller[0].name}}</td>
+            </tr>
+            <tr>
+                <td>Contact: </td>
+                <td>{{seller[0].mobileNumber}}</td>
+            </tr>
+            <tr>
+                <td>Address: </td>
+                <td>{{seller[0].address}}</td>
+            </tr>
+            <tr>
+                <td>Postal Code: </td>
+                <td>{{seller[0].postalCode}}</td>
+            </tr>
+            <tr>
+                <td>Schedule: </td>
+                <td>{{seller[0].schedule}}</td>
+            </tr>
+            <tr>
+                <td>Ratings: </td>
+                <td>
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/Feedback/positive.png" height="50" width="50"/></td>
+                            <td><img src="./img/Feedback/neutral.png" height="50" width="50"/></td>
+                            <td><img src="./img/Feedback/negative.png" height="50" width="50"/></td>
+                        </tr>
+                        <tr>
+                            <td>positive: {{seller[0].feedbackPositive}}</td>
+                            <td>neutral: {{seller[0].feedbackNeutral}}</td>
+                            <td>negative: {{seller[0].feedbackNegative}}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!-- TO EDIT: show buttons to correct user 
+        <button type="submit" class="btn btn-default">Edit Items</button>
+        -->
+       
+    </div>
+</div>

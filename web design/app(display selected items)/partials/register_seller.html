@@ -1,0 +1,203 @@
+<style>
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #eee;
+    }
+
+    table { table-layout: fixed; }
+    td { width: 33%; }
+</style>
+
+<h1>Registration</h1>
+<p class="lead">You are registering as a <strong>seller</strong></p>
+<div class="row">
+    <div class="col-md-6">
+        <form role="form">
+            <div class="form-group">
+                <label for="fullname" class="col-md-3" align="right">
+                    Full Name:
+                </label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="fullname" placeholder="Enter Full Name">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="emailaddress" class="col-md-3" align="right">
+                    Email:
+                </label>
+                <div class="col-md-8">
+                    <input type="email" class="form-control" id="emailaddress" placeholder="Enter email address">
+                    <p class="help-block">
+                        Example: yourname@domain.com
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="col-md-3" align="right">
+                    Password:
+                </label>
+                <div class="col-md-8">
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                    <p class="help-block">
+                        Min: 6 characters (Alphanumeric only)
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-8">
+                    <input type="password" class="form-control" id="repassword" placeholder="Re-enter Password">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address" class="col-md-3" align="right">
+                    Address:
+                </label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="block" placeholder="Enter Address">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="postalCode" placeholder="Postal Code">
+                    <p></p>
+                </div>
+            </div>  
+
+            <div class="form-group">
+                <label for="contact" class="col-md-3" align="right">
+                    Contact:
+                </label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="contact" placeholder="Enter Contact No.">
+                </div>
+            </div>
+
+
+            <br><br>
+            <div class="form-group">
+                <label for="sex" class="col-md-3" align="right">
+                    <br>
+                    Gender:
+                </label>
+                <div class="col-md-8">
+                    <label class="radio" class="col-md-4">
+                        <input type="radio" name="sex" id="sex" value="male">
+                        Male
+                    </label>
+                    <label class="radio" class="col-md-4">
+                        <input type="radio" name="sex" id="sex" value="female">
+                        Female
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="uploadimage" class="col-md-3" align="right">
+                    Upload Image:
+                </label>
+                <div class="col-md-8">
+                    <input type="file" name="uploadimage" id="uploadimage">
+                    <p class="help-block">
+                        Allowed formats: jpeg, jpg, gif, png
+                    </p>
+                </div>
+
+
+            </div>
+
+
+            <div class="checkbox">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-8">
+                    <label>
+                        <input type="checkbox">Terms and Conditions</label>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-info">
+                        Register
+                    </button>
+                </div>
+            </div>
+
+    </div>
+
+    <div class="col-md-6">
+        <!-- edit this and use jquery-->
+        <label for="schedule"> Pick your schedule: </label> 
+        <table class="table table-bordered">
+            <tr>
+                <td>Time/Date</td>
+                <td>mon</td>
+                <td>tue</td>
+                <td>wed</td>
+                <td>thu</td>
+                <td>fri</td>
+                <td>sat</td>
+                <td>sun</td>
+            </tr>
+
+            <tr>
+                <td>9am - 12nn</td>
+                <td><input type="checkbox" name="mon" id="9to12"></td>
+                <td><input type="checkbox" name="tue" id="9to12"></td>
+                <td><input type="checkbox" name="wed" id="9to12"></td>
+                <td><input type="checkbox" name="thu" id="9to12"></td>
+                <td><input type="checkbox" name="fri" id="9to12"></td>
+                <td><input type="checkbox" name="sat" id="9to12"></td>
+                <td><input type="checkbox" name="sun" id="9to12"></td>
+            </tr>
+
+            <tr>
+                <td>12nn - 3pm</td>
+                <td><input type="checkbox" name="mon" id="12to3"></td>
+                <td><input type="checkbox" name="tue" id="12to3"></td>
+                <td><input type="checkbox" name="wed" id="12to3"></td>
+                <td><input type="checkbox" name="thu" id="12to3"></td>
+                <td><input type="checkbox" name="fri" id="12to3"></td>
+                <td><input type="checkbox" name="sat" id="12to3"></td>
+                <td><input type="checkbox" name="sun" id="12to3"></td>
+            </tr>
+
+            <tr>
+                <td>3pm - 6pm</td>
+                <td><input type="checkbox" name="mon" id="3to6"></td>
+                <td><input type="checkbox" name="tue" id="3to6"></td>
+                <td><input type="checkbox" name="wed" id="3to6"></td>
+                <td><input type="checkbox" name="thu" id="3to6"></td>
+                <td><input type="checkbox" name="fri" id="3to6"></td>
+                <td><input type="checkbox" name="sat" id="3to6"></td>
+                <td><input type="checkbox" name="sun" id="3to6"></td>
+            </tr>
+
+            <tr>
+                <td>6pm - 12pm</td>
+                <td><input type="checkbox" name="mon" id="6to9"></td>
+                <td><input type="checkbox" name="tue" id="6to9"></td>
+                <td><input type="checkbox" name="wed" id="6to9"></td>
+                <td><input type="checkbox" name="thu" id="6to9"></td>
+                <td><input type="checkbox" name="fri" id="6to9"></td>
+                <td><input type="checkbox" name="sat" id="6to9"></td>
+                <td><input type="checkbox" name="sun" id="6to9"></td>
+            </tr>
+        </table>     
+    </div>
+</form>
+</div>
